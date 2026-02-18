@@ -1,5 +1,15 @@
 # ER Diagram — Siddham Coolers E-Commerce Platform
 
+<div align="center">
+
+### 📊 Rendered Diagram
+
+<img src="Assets/ErDiagram.png" alt="ER Diagram — Siddham Coolers" width="800"/>
+
+</div>
+
+---
+
 ## Overview
 
 The database is designed for **MongoDB** (document-oriented), but the ER diagram below models the entities and relationships in a relational style for clarity. Each "table" maps to a MongoDB **collection**, and embedded sub-documents are noted where applicable.

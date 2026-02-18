@@ -1,5 +1,15 @@
 # Sequence Diagrams — Siddham Coolers E-Commerce Platform
 
+<div align="center">
+
+### 📊 Rendered Diagram
+
+<img src="Assets/SequenceDiagram.png" alt="Sequence Diagram — Siddham Coolers" width="800"/>
+
+</div>
+
+---
+
 ## 1. Main Flow: Customer Browses, Applies Coupon & Places Order
 
 This is the **primary end-to-end flow** of the application.

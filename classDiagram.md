@@ -1,5 +1,15 @@
 # Class Diagram — Siddham Coolers E-Commerce Platform
 
+<div align="center">
+
+### 📊 Rendered Diagram
+
+<img src="Assets/ClassDiagram.svg" alt="Class Diagram — Siddham Coolers" width="800"/>
+
+</div>
+
+---
+
 ## Overview
 
 The system follows a layered architecture: **Controller → Service → Repository (Model)**. The class diagram below captures the **domain model** — the core entities and their relationships.

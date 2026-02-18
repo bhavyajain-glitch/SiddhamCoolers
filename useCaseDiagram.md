@@ -1,5 +1,15 @@
 # Use Case Diagram — Siddham Coolers E-Commerce Platform
 
+<div align="center">
+
+### 📊 Rendered Diagram
+
+<img src="Assets/UseCaseDiagram.png" alt="Use Case Diagram — Siddham Coolers" width="800"/>
+
+</div>
+
+---
+
 ## Actors
 
 | Actor | Description |
