@@ -92,22 +92,25 @@ export default function Home() {
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaarBtbgwXIN9_HnRgXkO7U_FO7qee87FAVS-Yrg_mgS8DLRBbAHkkBuvI2r5mwXiRbkLqGuHzHAW7uYvtCVFFkjgPViP6eQ9oWNHeqwqIT_kuAUh-vAttZfl3G9Vl_XG4xXzWCn9rqJbxA_hQ1MYVIcJaBeDKNUZvQ7qEtqUILiSAjFvuM1zjlV7kVnG2te2WBfqpqcxt5ER0XtEAtSsar6KVAYmFgf_ZZ027EXrHbqVFlWkP2TwM-BsqGxXu6i4_Nyx4K3NvQNo"
             />
             {/* Floating Card */}
-            <div className="absolute bottom-10 right-0 md:-right-10 bg-surface-container-lowest/80 backdrop-blur-2xl p-8 rounded-2xl ambient-shadow-lg z-20 w-80 ring-1 ring-outline-variant/15 flex flex-col gap-4">
-              <div className="flex justify-between items-start">
-                <div>
-                  <span className="text-[0.6875rem] font-bold uppercase tracking-widest text-primary mb-1 block">Flagship</span>
-                  <h3 className="font-headline text-[1.125rem] font-medium text-on-background">Aero Pure X1</h3>
+            {showcaseProducts.length > 0 && (
+              <div className="absolute bottom-10 right-0 md:-right-10 bg-surface-container-lowest/80 backdrop-blur-2xl p-8 rounded-2xl ambient-shadow-lg z-20 w-80 ring-1 ring-outline-variant/15 flex flex-col gap-4">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <span className="text-[0.6875rem] font-bold uppercase tracking-widest text-primary mb-1 block">Flagship</span>
+                    <h3 className="font-headline text-[1.125rem] font-medium text-on-background">{showcaseProducts[0].name}</h3>
+                  </div>
+                  <span className="font-body text-lg font-light text-on-surface-variant">{showcaseProducts[0].price}</span>
                 </div>
-                <span className="font-body text-lg font-light text-on-surface-variant">$499</span>
+                <div className="flex gap-2 mb-2">
+                  <span className="bg-primary-fixed/60 text-on-primary-fixed rounded-full px-3 py-1 text-[0.6875rem] font-bold uppercase tracking-wider line-clamp-1">
+                    {showcaseProducts[0].series}
+                  </span>
+                </div>
+                <Link to={`/product/${showcaseProducts[0]._id}`} className="w-full btn-gradient text-on-primary font-medium py-3 rounded-xl hover:opacity-90 transition-opacity text-center">
+                  Shop Dynamic Model
+                </Link>
               </div>
-              <div className="flex gap-2 mb-2">
-                <span className="bg-primary-fixed/60 text-on-primary-fixed rounded-full px-3 py-1 text-[0.6875rem] font-bold uppercase tracking-wider">Silent Mode</span>
-                <span className="bg-primary-fixed/60 text-on-primary-fixed rounded-full px-3 py-1 text-[0.6875rem] font-bold uppercase tracking-wider">Eco-Cool</span>
-              </div>
-              <Link to="/products" className="w-full btn-gradient text-on-primary font-medium py-3 rounded-xl hover:opacity-90 transition-opacity text-center">
-                Shop Now
-              </Link>
-            </div>
+            )}
           </motion.div>
         </div>
       </header>
