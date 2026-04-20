@@ -114,9 +114,9 @@ export default function Profile() {
                   <div className="space-y-4">
                     {order.items.map(item => (
                       <div key={item._id} className="flex gap-4 items-center p-4 bg-surface-container rounded-xl">
-                        <img src={item.productId.images[0]} alt={item.productId.name} className="w-16 h-16 rounded-lg object-cover mix-blend-multiply" />
+                        <img src={item.productId?.images?.[0] || 'https://placehold.co/100x100?text=Product'} alt={item.productId?.name || 'Unknown Product'} className="w-16 h-16 rounded-lg object-cover mix-blend-multiply" />
                         <div className="flex-1">
-                          <p className="font-medium text-on-background">{item.productId.name}</p>
+                          <p className="font-medium text-on-background">{item.productId?.name || 'Unknown Product'}</p>
                           <p className="text-sm text-on-surface-variant">Qty: {item.quantity}</p>
                         </div>
                         <p className="font-medium text-on-background">₹{item.price.toLocaleString('en-IN')}</p>
