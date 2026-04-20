@@ -139,7 +139,7 @@ class Seeder {
       return {
         name: name,
         description: `Premium smart cooling experience with the ${name}. Powerful airflow, high-density honeycomb pads, and robust build quality designed for maximum efficiency.`,
-        images: [`http://localhost:5001/assets/${encodeURIComponent(file)}`],
+        images: [`https://siddham-coolers-api.onrender.com/assets/${encodeURIComponent(file)}`],
         price: price,
         mrp: Math.floor(price * 1.3),
         category: category,
