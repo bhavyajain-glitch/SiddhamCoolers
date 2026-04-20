@@ -29,7 +29,7 @@ class Application {
    * Register all middleware.
    */
   configureMiddleware() {
-    this.app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:3000'], credentials: true }));
+    this.app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:3000', 'https://siddham-coolers.vercel.app'], credentials: true }));
     this.app.use(express.json({ limit: '10mb' }));
     this.app.use(express.urlencoded({ extended: true }));
 
