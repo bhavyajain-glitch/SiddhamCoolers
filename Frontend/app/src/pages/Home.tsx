@@ -8,8 +8,7 @@ const showcaseProducts = [
     series: 'Desert Series',
     desc: 'Heavy Duty Fiber Cooler 18" with maximum airflow for large spaces.',
     price: '₹14,199',
-    image: 'http://localhost:5001/assets/Airmax%2085%20.png',
-    highlight: false,
+    image: 'https://siddham-coolers-api.onrender.com/assets/Airmax%2085%20.png',
   },
   {
     id: '662b6cf07a2a514d2e1b1235', // Dummy ID, Cool Max 125
@@ -17,7 +16,7 @@ const showcaseProducts = [
     series: 'Industrial',
     desc: 'Ultimate Commercial Cooling Power. Dominate the heat with commercial-grade comfort.',
     price: '₹18,999',
-    image: 'http://localhost:5001/assets/Cool%20Max%20125.png',
+    image: 'https://siddham-coolers-api.onrender.com/assets/Cool%20Max%20125.png',
     highlight: true,
   },
   {
@@ -26,7 +25,7 @@ const showcaseProducts = [
     series: 'Personal Series',
     desc: 'Smart Cooling. Powerful Performance. Engineered for compact spaces.',
     price: '₹8,799',
-    image: 'http://localhost:5001/assets/Chiller%2040%20GT.png',
+    image: 'https://siddham-coolers-api.onrender.com/assets/Chiller%2040%20GT.png',
     highlight: false,
   },
 ];
