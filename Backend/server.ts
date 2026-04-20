@@ -69,6 +69,22 @@ class Application {
     try {
       await database.connect(process.env.MONGO_URI);
 
+      // ─── START TEMP MIGRATION SCRIPT ───
+      // Automatically transition any old localhost images to the live Render URL
+      const ProductModel = (await import('./src/models/Product')).default;
+      const productsToUpdate = await ProductModel.find({ images: { $regex: 'http://localhost:5001' } });
+      if (productsToUpdate.length > 0) {
+        console.log(`🔄 Migrating ${productsToUpdate.length} product images from localhost to Render URL...`);
+        for (const product of productsToUpdate) {
+          const newImages = (product as any).images.map((img: string) => 
+            img.replace('http://localhost:5001', 'https://siddham-coolers-api.onrender.com')
+          );
+          await ProductModel.findByIdAndUpdate(product._id, { images: newImages });
+        }
+        console.log('✅ Image migration complete!');
+      }
+      // ─── END TEMP MIGRATION SCRIPT ───
+
       const userCount = await User.countDocuments();
       if (userCount === 0) {
         console.log('🌱 Database is empty. Running seeder automatically...');
