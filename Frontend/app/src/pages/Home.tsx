@@ -67,7 +67,7 @@ export default function Home() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-4xl mx-auto mb-16"
           >
-            <h1 className="font-headline text-6xl md:text-[5.5rem] font-bold text-on-background leading-[1.05] tracking-tight mb-6">
+            <h1 className="font-headline text-[3.5rem] leading-[1.1] md:text-[5.5rem] font-bold text-on-background md:leading-[1.05] tracking-tight mb-6">
               Minimal Cooling.
             </h1>
             <p className="font-body text-xl md:text-2xl text-on-surface-variant font-light tracking-wide max-w-2xl mx-auto">
@@ -297,7 +297,7 @@ export default function Home() {
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </button>
           </motion.div>
-          <div className="w-full md:w-2/3 grid grid-cols-2 gap-4">
+          <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {specs.map((spec, index) => (
               <motion.div
                 key={spec.label}

@@ -207,8 +207,8 @@ export default function AdminDashboard() {
             <div className="px-6 py-4 border-b border-outline-variant/10">
               <h2 className="text-lg font-bold text-on-surface">All Orders ({orders.length})</h2>
             </div>
-            <div className="overflow-x-auto">
-              <table className="w-full">
+            <div className="overflow-x-auto pb-4">
+              <table className="w-full min-w-[800px] whitespace-nowrap">
                 <thead>
                   <tr className="bg-surface-container">
                     <th className="text-left px-6 py-3 text-xs font-semibold tracking-wider text-on-surface-variant uppercase">Customer</th>
