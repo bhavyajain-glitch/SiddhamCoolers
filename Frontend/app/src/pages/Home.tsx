@@ -1,34 +1,7 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-
-const showcaseProducts = [
-  {
-    id: '662b6cf07a2a514d2e1b1234', // Dummy ID, will link to Airmax 85 if available or redirect
-    name: 'Airmax 85',
-    series: 'Desert Series',
-    desc: 'Heavy Duty Fiber Cooler 18" with maximum airflow for large spaces.',
-    price: '₹14,199',
-    image: 'https://siddham-coolers-api.onrender.com/assets/Airmax%2085%20.png',
-  },
-  {
-    id: '662b6cf07a2a514d2e1b1235', // Dummy ID, Cool Max 125
-    name: 'Cool Max 125',
-    series: 'Industrial',
-    desc: 'Ultimate Commercial Cooling Power. Dominate the heat with commercial-grade comfort.',
-    price: '₹18,999',
-    image: 'https://siddham-coolers-api.onrender.com/assets/Cool%20Max%20125.png',
-    highlight: true,
-  },
-  {
-    id: '662b6cf07a2a514d2e1b1236',
-    name: 'Chiller 40 GT',
-    series: 'Personal Series',
-    desc: 'Smart Cooling. Powerful Performance. Engineered for compact spaces.',
-    price: '₹8,799',
-    image: 'https://siddham-coolers-api.onrender.com/assets/Chiller%2040%20GT.png',
-    highlight: false,
-  },
-];
+import { ProductApi } from '../services/api';
 
 const testimonials = [
   {
@@ -55,6 +28,38 @@ const specs = [
 const cities = ['New York', 'Los Angeles', 'Chicago', 'Miami', 'Austin', 'Seattle'];
 
 export default function Home() {
+  const [showcaseProducts, setShowcaseProducts] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchShowcase = async () => {
+      try {
+        const res = await ProductApi.getAll({ limit: 3 });
+        // Map the real DB objects into our showcase ui format
+        const mapped = res.data.slice(0, 3).map((p: any, index: number) => ({
+          _id: p._id,
+          name: p.name,
+          series: `${p.category} Series`,
+          desc: p.description.substring(0, 100) + '...',
+          price: `₹${p.price.toLocaleString('en-IN')}`,
+          image: p.images[0],
+          highlight: index === 1, // Make the middle item the highlight
+        }));
+        
+        // If the DB is completely empty for some reason, fallback safely
+        if (mapped.length === 0) {
+          setShowcaseProducts([{
+            _id: 'dummy', name: 'Airmax 85', series: 'Desert Series', desc: 'Premium Cooling.', price: '₹14,199', image: 'https://siddham-coolers-api.onrender.com/assets/Airmax%2085%20.png', highlight: true
+          }]);
+        } else {
+          setShowcaseProducts(mapped);
+        }
+      } catch (err) {
+        console.error('Failed to load showcase products:', err);
+      }
+    };
+    fetchShowcase();
+  }, []);
+
   return (
     <main className="pt-0">
       {/* ─── 1. HERO ─── */}
@@ -99,8 +104,8 @@ export default function Home() {
                 <span className="bg-primary-fixed/60 text-on-primary-fixed rounded-full px-3 py-1 text-[0.6875rem] font-bold uppercase tracking-wider">Silent Mode</span>
                 <span className="bg-primary-fixed/60 text-on-primary-fixed rounded-full px-3 py-1 text-[0.6875rem] font-bold uppercase tracking-wider">Eco-Cool</span>
               </div>
-              <Link to="/product/1" className="w-full btn-gradient text-on-primary font-medium py-3 rounded-xl hover:opacity-90 transition-opacity text-center">
-                Buy Now
+              <Link to="/products" className="w-full btn-gradient text-on-primary font-medium py-3 rounded-xl hover:opacity-90 transition-opacity text-center">
+                Shop Now
               </Link>
             </div>
           </motion.div>
@@ -195,7 +200,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {showcaseProducts.map((product, index) => (
               <motion.div
-                key={product.id}
+                key={product._id || index}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
@@ -203,7 +208,7 @@ export default function Home() {
                 className={product.highlight ? 'relative md:-top-12 z-10' : ''}
               >
                 <Link
-                  to={`/product/${product.id}`}
+                  to={`/product/${product._id}`}
                   className="block h-full bg-surface-container-lowest rounded-2xl ambient-shadow-sm overflow-hidden group cursor-pointer"
                 >
                   <div className={`${product.highlight ? 'h-[28rem]' : 'h-96'} w-full bg-surface-container flex items-center justify-center overflow-hidden relative`}>
@@ -222,7 +227,7 @@ export default function Home() {
                     {product.series}
                   </span>
                   <h3 className="font-headline text-[1.125rem] font-medium text-on-background mb-4">{product.name}</h3>
-                  <p className="font-body text-[0.875rem] text-on-surface-variant font-light mb-6">{product.desc}</p>
+                  <p className="font-body text-[0.875rem] text-on-surface-variant font-light mb-6 line-clamp-2">{product.desc}</p>
                     <span className="font-body text-lg font-light text-on-background">{product.price}</span>
                   </div>
                 </Link>
@@ -292,10 +297,10 @@ export default function Home() {
             <p className="font-body text-[0.875rem] text-on-surface-variant font-light leading-relaxed mb-8">
               Precision engineering meets uncompromising material quality. Every component is designed to operate in perfect harmony, maximizing thermal efficiency.
             </p>
-            <button className="self-start text-primary font-medium flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <Link to="/products" className="self-start text-primary font-medium flex items-center gap-2 hover:opacity-80 transition-opacity">
               View Full Specifications
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
-            </button>
+            </Link>
           </motion.div>
           <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {specs.map((spec, index) => (
