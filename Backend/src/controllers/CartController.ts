@@ -1,4 +1,4 @@
-import CartService from '../services/CartService.js';
+import CartService from '../services/CartService';
 
 /**
  * CartController — handles shopping cart HTTP requests.

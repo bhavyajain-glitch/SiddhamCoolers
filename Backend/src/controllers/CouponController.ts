@@ -1,4 +1,4 @@
-import CouponService from '../services/CouponService.js';
+import CouponService from '../services/CouponService';
 
 /**
  * CouponController — handles coupon validation HTTP requests.

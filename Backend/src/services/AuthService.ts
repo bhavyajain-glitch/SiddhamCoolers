@@ -1,4 +1,4 @@
-import User from '../models/User.js';
+import User from '../models/User';
 
 /**
  * AuthService — handles user registration, authentication, and profile management.

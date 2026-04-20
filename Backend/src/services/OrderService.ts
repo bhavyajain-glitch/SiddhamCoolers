@@ -1,8 +1,8 @@
-import Order from '../models/Order.js';
-import Cart from '../models/Cart.js';
-import Product from '../models/Product.js';
-import Coupon from '../models/Coupon.js';
-import Commission from '../models/Commission.js';
+import Order from '../models/Order';
+import Cart from '../models/Cart';
+import Product from '../models/Product';
+import Coupon from '../models/Coupon';
+import Commission from '../models/Commission';
 
 /**
  * OrderService — handles order creation, status updates, and querying.

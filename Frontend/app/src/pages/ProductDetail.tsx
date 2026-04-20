@@ -187,7 +187,7 @@ export default function ProductDetail() {
                   {specs.map(([key, value]) => (
                     <div key={key} className="bg-surface-container-lowest rounded-xl p-4 ambient-shadow-sm">
                       <p className="text-[10px] font-semibold tracking-[0.2em] text-on-surface-variant uppercase">{key}</p>
-                      <p className="text-lg font-bold text-on-surface mt-1">{value}</p>
+                      <p className="text-lg font-bold text-on-surface mt-1">{String(value)}</p>
                     </div>
                   ))}
                 </div>

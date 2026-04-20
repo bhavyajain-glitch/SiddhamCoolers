@@ -1,4 +1,4 @@
-import VendorService from '../services/VendorService.js';
+import VendorService from '../services/VendorService';
 
 /**
  * VendorController — handles vendor management HTTP requests.

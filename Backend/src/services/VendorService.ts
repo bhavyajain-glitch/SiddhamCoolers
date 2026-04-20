@@ -1,7 +1,7 @@
-import User from '../models/User.js';
-import Coupon from '../models/Coupon.js';
-import Commission from '../models/Commission.js';
-import Order from '../models/Order.js';
+import User from '../models/User';
+import Coupon from '../models/Coupon';
+import Commission from '../models/Commission';
+import Order from '../models/Order';
 
 /**
  * VendorService — manages vendor (retailer) lifecycle and data.

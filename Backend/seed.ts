@@ -1,12 +1,12 @@
 import 'dotenv/config';
 import mongoose from 'mongoose';
-import database from './src/config/database.js';
-import User from './src/models/User.js';
-import Product from './src/models/Product.js';
-import Coupon from './src/models/Coupon.js';
-import Order from './src/models/Order.js';
-import Commission from './src/models/Commission.js';
-import Cart from './src/models/Cart.js';
+import database from './src/config/database';
+import User from './src/models/User';
+import Product from './src/models/Product';
+import Coupon from './src/models/Coupon';
+import Order from './src/models/Order';
+import Commission from './src/models/Commission';
+import Cart from './src/models/Cart';
 
 /**
  * Seeder class — populates the database with initial data.

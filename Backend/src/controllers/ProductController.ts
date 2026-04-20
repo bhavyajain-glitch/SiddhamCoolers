@@ -1,4 +1,4 @@
-import ProductService from '../services/ProductService.js';
+import ProductService from '../services/ProductService';
 
 /**
  * ProductController — handles product CRUD HTTP requests.

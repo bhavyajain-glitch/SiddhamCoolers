@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 
 const API_BASE = 'http://localhost:5001/api';
 
@@ -6,6 +6,8 @@ const API_BASE = 'http://localhost:5001/api';
  * ApiService — OOP wrapper around Axios for all API calls.
  */
 class ApiService {
+  client: AxiosInstance;
+
   constructor() {
     this.client = axios.create({
       baseURL: API_BASE,
@@ -75,20 +77,20 @@ export class AuthApi {
 
 // ─── Product API ───
 export class ProductApi {
-  static getAll(filters) { return api.get('/products', filters); }
+  static getAll(filters = {}) { return api.get('/products', filters); }
   static getAllAdmin() { return api.get('/products/admin'); }
-  static getById(id) { return api.get(`/products/${id}`); }
-  static create(data) { return api.post('/products', data); }
-  static update(id, data) { return api.put(`/products/${id}`, data); }
-  static delete(id) { return api.delete(`/products/${id}`); }
+  static getById(id: string) { return api.get(`/products/${id}`); }
+  static create(data: any) { return api.post('/products', data); }
+  static update(id: string, data: any) { return api.put(`/products/${id}`, data); }
+  static delete(id: string) { return api.delete(`/products/${id}`); }
 }
 
 // ─── Order API ───
 export class OrderApi {
-  static create(data) { return api.post('/orders', data); }
-  static getAll(filters) { return api.get('/orders', filters); }
-  static getById(id) { return api.get(`/orders/${id}`); }
-  static updateStatus(id, status) { return api.patch(`/orders/${id}/status`, { status }); }
+  static create(data: any) { return api.post('/orders', data); }
+  static getAll(filters = {}) { return api.get('/orders', filters); }
+  static getById(id: string) { return api.get(`/orders/${id}`); }
+  static updateStatus(id: string, status: string) { return api.patch(`/orders/${id}/status`, { status }); }
   static getAnalytics() { return api.get('/orders/analytics'); }
 }
 

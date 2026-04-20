@@ -204,7 +204,7 @@ export default function Profile() {
                     <textarea 
                       value={formData.address}
                       onChange={(e) => setFormData({...formData, address: e.target.value})}
-                      rows="3"
+                      rows={3}
                       className="w-full bg-surface-container p-3 rounded-xl ring-1 ring-outline-variant/20 focus:ring-primary focus:outline-none placeholder:text-on-surface-variant/50 text-on-surface resize-none"
                       placeholder="123 Street..."
                     />

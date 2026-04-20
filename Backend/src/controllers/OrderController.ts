@@ -1,4 +1,4 @@
-import OrderService from '../services/OrderService.js';
+import OrderService from '../services/OrderService';
 
 /**
  * OrderController — handles order-related HTTP requests.

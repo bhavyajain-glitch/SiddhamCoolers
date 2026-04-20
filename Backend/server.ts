@@ -3,18 +3,18 @@ import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import database from './src/config/database.js';
-import { errorHandler } from './src/middleware/errorHandler.js';
-import User from './src/models/User.js';
-import Seeder from './seed.js';
+import database from './src/config/database';
+import { errorHandler } from './src/middleware/errorHandler';
+import User from './src/models/User';
+import Seeder from './seed';
 
 // Route imports
-import authRoutes from './src/routes/authRoutes.js';
-import productRoutes from './src/routes/productRoutes.js';
-import orderRoutes from './src/routes/orderRoutes.js';
-import vendorRoutes from './src/routes/vendorRoutes.js';
-import cartRoutes from './src/routes/cartRoutes.js';
-import couponRoutes from './src/routes/couponRoutes.js';
+import authRoutes from './src/routes/authRoutes';
+import productRoutes from './src/routes/productRoutes';
+import orderRoutes from './src/routes/orderRoutes';
+import vendorRoutes from './src/routes/vendorRoutes';
+import cartRoutes from './src/routes/cartRoutes';
+import couponRoutes from './src/routes/couponRoutes';
 
 /**
  * Application class — Express server setup with OOP pattern.
