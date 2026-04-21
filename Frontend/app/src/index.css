@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+/* Fonts loaded from index.html for better performance */
+
+/* ─── Siddham Design System: "Atmospheric Precision" ─── */
+@theme {
+  /* Primary */
+  --color-primary: #0058bd;
+  --color-primary-container: #1470e8;
+  --color-primary-fixed: #d8e2ff;
+  --color-primary-fixed-dim: #adc6ff;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #fefcff;
+  --color-on-primary-fixed: #001a41;
+  --color-on-primary-fixed-variant: #004494;
+  --color-inverse-primary: #adc6ff;
+
+  /* Secondary */
+  --color-secondary: #5f5e5e;
+  --color-secondary-container: #e5e2e1;
+  --color-secondary-fixed: #e5e2e1;
+  --color-secondary-fixed-dim: #c8c6c5;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #656464;
+  --color-on-secondary-fixed: #1c1b1b;
+  --color-on-secondary-fixed-variant: #474646;
+
+  /* Tertiary */
+  --color-tertiary: #5a5c5c;
+  --color-tertiary-container: #737575;
+  --color-tertiary-fixed: #e2e2e2;
+  --color-tertiary-fixed-dim: #c6c6c7;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #fcfcfc;
+  --color-on-tertiary-fixed: #1a1c1c;
+  --color-on-tertiary-fixed-variant: #454747;
+
+  /* Error */
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  /* Surface */
+  --color-surface: #f9f9f9;
+  --color-surface-dim: #dadada;
+  --color-surface-bright: #f9f9f9;
+  --color-surface-variant: #e2e2e2;
+  --color-surface-tint: #005ac2;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f3f3f3;
+  --color-surface-container: #eeeeee;
+  --color-surface-container-high: #e8e8e8;
+  --color-surface-container-highest: #e2e2e2;
+
+  /* Background */
+  --color-background: #f9f9f9;
+  --color-on-background: #1a1c1c;
+  --color-on-surface: #1a1c1c;
+  --color-on-surface-variant: #414754;
+
+  /* Outline */
+  --color-outline: #727785;
+  --color-outline-variant: #c2c6d6;
+
+  /* Inverse */
+  --color-inverse-surface: #2f3131;
+  --color-inverse-on-surface: #f1f1f1;
+
+  /* Font */
+  --font-headline: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-label: 'Inter', sans-serif;
+}
+
+/* ─── Base Styles ─── */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  color: #1a1c1c;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #d8e2ff;
+  color: #001a41;
+}
+
+/* ─── Custom Utilities ─── */
+.btn-gradient {
+  background: linear-gradient(180deg, #0058bd 0%, #1470e8 100%);
+}
+
+.glass-panel {
+  background: rgba(249, 249, 249, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #0058bd, #1470e8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ambient-shadow {
+  box-shadow: 0 20px 40px -10px rgba(26, 28, 28, 0.05);
+}
+
+.ambient-shadow-lg {
+  box-shadow: 0 40px 60px -15px rgba(26, 28, 28, 0.05);
+}
+
+.ambient-shadow-sm {
+  box-shadow: 0 10px 30px -8px rgba(26, 28, 28, 0.04);
+}
+
+/* Ghost Border for inputs */
+.input-ghost-border:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(194, 198, 214, 0.2);
+  background-color: #ffffff;
+}
+
+/* Apple-style easing */
+.ease-apple {
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* No scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f9f9f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #e2e2e2;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c2c6d6;
+}
+
+/* Material Symbols sizing */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}

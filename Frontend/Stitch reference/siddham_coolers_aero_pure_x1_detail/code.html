@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Siddham - Aero Pure X1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-dim": "#dadada",
+                      "primary-container": "#1470e8",
+                      "error-container": "#ffdad6",
+                      "on-secondary-container": "#656464",
+                      "on-error": "#ffffff",
+                      "secondary-fixed": "#e5e2e1",
+                      "outline": "#727785",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "secondary": "#5f5e5e",
+                      "primary": "#0058bd",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#adc6ff",
+                      "surface": "#f9f9f9",
+                      "inverse-surface": "#2f3131",
+                      "background": "#f9f9f9",
+                      "surface-variant": "#e2e2e2",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#737575",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "surface-tint": "#005ac2",
+                      "surface-bright": "#f9f9f9",
+                      "on-error-container": "#93000a",
+                      "on-primary-container": "#fefcff",
+                      "on-primary": "#ffffff",
+                      "surface-container-low": "#f3f3f3",
+                      "secondary-container": "#e5e2e1",
+                      "tertiary-fixed": "#e2e2e2",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "on-surface": "#1a1c1c",
+                      "surface-container": "#eeeeee",
+                      "tertiary": "#5a5c5c",
+                      "outline-variant": "#c2c6d6",
+                      "surface-container-high": "#e8e8e8",
+                      "primary-fixed": "#d8e2ff",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "on-primary-fixed-variant": "#004494",
+                      "inverse-primary": "#adc6ff",
+                      "on-secondary-fixed-variant": "#474646",
+                      "on-tertiary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "on-background": "#1a1c1c",
+                      "on-tertiary-container": "#fcfcfc",
+                      "on-surface-variant": "#414754",
+                      "on-primary-fixed": "#001a41",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "inverse-on-surface": "#f1f1f1"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": [
+                              "Inter"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "label": [
+                              "Inter"
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Custom Utilities */
+        .glass-panel {
+            background: rgba(249, 249, 249, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #0058bd, #1470e8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-primary-gradient {
+            background: linear-gradient(to bottom, #0058bd, #1470e8);
+        }
+        .ambient-shadow {
+            box-shadow: 0 20px 40px -10px rgba(26, 28, 28, 0.05);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-low/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-slate-50/70 dark:bg-zinc-900/70 backdrop-blur-2xl">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-[1920px] mx-auto">
+<div class="flex items-center gap-12">
+<a class="text-2xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 font-['Inter'] hover:opacity-80 transition-all duration-500 ease-out" href="#">
+                    Siddham
+                </a>
+<nav class="hidden md:flex gap-8">
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-['Inter'] font-light tracking-tight hover:opacity-80 transition-all duration-500 ease-out" href="#">Technology</a>
+<a class="text-zinc-900 dark:text-zinc-50 font-medium border-b-2 border-blue-600 pb-1 font-['Inter'] font-light tracking-tight hover:opacity-80 transition-all duration-500 ease-out" href="#">Products</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-['Inter'] font-light tracking-tight hover:opacity-80 transition-all duration-500 ease-out" href="#">Stories</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-['Inter'] font-light tracking-tight hover:opacity-80 transition-all duration-500 ease-out" href="#">Support</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-zinc-900 dark:text-zinc-50 hover:opacity-80 transition-all duration-500 ease-out flex items-center justify-center">
+<span class="material-symbols-outlined font-light text-2xl" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<a class="hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-medium btn-primary-gradient text-on-primary hover:opacity-90 transition-opacity" href="#">
+                    Shop Now
+                </a>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24">
+<!-- Product Hero & Layout -->
+<div class="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24">
+<div class="flex flex-col lg:flex-row gap-16 lg:gap-24 relative items-start">
+<!-- Left: Sticky Gallery -->
+<div class="w-full lg:w-[55%] lg:sticky lg:top-32 h-auto lg:h-[calc(100vh-10rem)] flex flex-col gap-6">
+<!-- Main Image Bleed -->
+<div class="w-full h-[512px] md:h-[614px] lg:h-[70%] rounded-[2rem] overflow-hidden bg-surface-container-low ambient-shadow relative group">
+<img alt="Aero Pure X1" class="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105" data-alt="high end futuristic sleek metallic air cooler unit in a minimalist white studio setting with soft diffused lighting and sharp reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZh4xr5icZi79K0yNRalnQh1gBsjBYBfZO2bnhUyBZHp_A4gItsJNQOjMPqZHtWCNy6-9xuCWTTrKIBuvgBirod9OYBj4DBgM4iFSFwQW4MQxmv5d4GAylpaW32wK9EtPW2591wSnU7sbuKL4KdLxfLRFKXyZS0FgXeOrFfyB0gJNUy4cGJHqGwUe3_ThSxJJpmsWpHElSdRuZ9i8zzUaH5x__T8WCMCd_Q9yvLi2_ylYtCHQlZqReBHFOExtubhSOZwJ9hxqvQPM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+<!-- Floating Airflow Chip -->
+<div class="absolute top-6 left-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-fixed/90 backdrop-blur-md">
+<span class="material-symbols-outlined text-[1rem] text-on-primary-fixed" data-icon="air">air</span>
+<span class="text-label-sm font-bold uppercase tracking-wider text-on-primary-fixed">Silent Cool Tech</span>
+</div>
+</div>
+<!-- Thumbnail Row -->
+<div class="w-full h-auto lg:h-[25%] flex gap-4 overflow-x-auto no-scrollbar pb-4 snap-x">
+<button class="flex-none w-32 md:w-48 h-full rounded-2xl overflow-hidden bg-surface-container-low border-2 border-primary/20 opacity-100 transition-opacity snap-start">
+<img class="w-full h-full object-cover" data-alt="close up detail shot of the sleek control panel of a modern white appliance with subtle blue led lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGjiLrlsuheQuSJfRiN72OTA-JPGm2jpJRSCxZo6ROt20368XZwbJSe_0p_5U-HkxnGiJAJwoAMHDeINv5bRPnr7zF_qGKRgn0OCvnHTiZ8bTcbOfZE0wJ313ZhMZ3lP3_pIo_BsaGKnVCtRgMDiWEnM6X4j22_tSzqWsnCsQ5VU_qKyWpfEb81bhqIfZtixyDRYHZtILrPDrvZyN0yYaPvlKQxqBQ583HXHCF8Ed6sg9hy4ZYdF2kMbKi6W25NAhRm9KjWVd3os4"/>
+</button>
+<button class="flex-none w-32 md:w-48 h-full rounded-2xl overflow-hidden bg-surface-container-low hover:opacity-80 transition-opacity snap-start">
+<img class="w-full h-full object-cover" data-alt="interior modern minimal living room setting showing a premium white cylindrical appliance blending into the decor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNsjt5gydRSpm4IEY6DugzfFFP6AFdcXrMckzSxpAl5D5l-xLjKPPekkNUXgOAUnl8zzpNTYiPupVyc0UavoalBJyLA_I_Ta0AkbZ_rIhr09vKkTQESTcnqquqEolYNtQp-X6VaKQa0etKVyvEXNHSS5cLd71W1ZgqKx_HmRURwMqekvHTKLJSmLYSbeaf73KoJsiJ-DHbskvB-01YN3jVqzosM5PySR3-IgS6a4w2uVMDPAp1aLxwpXgvHxx7fYHjX1TZsagpS4M"/>
+</button>
+<button class="flex-none w-32 md:w-48 h-full rounded-2xl overflow-hidden bg-surface-container-low hover:opacity-80 transition-opacity snap-start">
+<img class="w-full h-full object-cover" data-alt="macro shot of the fine metal mesh texture on a premium industrial appliance showing precision engineering" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr1GVTf2VW3BVIdJN4Qf1xKiP_3GHK2NlxmFz2SOdg-aP0EEvOzYpgWe0WW7SxqeoDw_pxMuIzdW6kgOE-jV3Tte5Gke7cbu7kAeauMW8hhot2kFAq3uYZlA6FQLAzAW3x5bAyylWQvE07I9xKntLbtxkazrmnuqP503OhKnzC6us6DMLYrYiXbpYrpJ-df2RyhxpF5TYpvbpze6N2wYVvYmD6-yqYg31_5aDbT03kar_eMi-BNBRT2fpx85xcsn1aAHhmLGDnsSo"/>
+</button>
+</div>
+</div>
+<!-- Right: Product Info & Storytelling -->
+<div class="w-full lg:w-[45%] flex flex-col pt-8 lg:pt-0 pb-32">
+<!-- Header Section -->
+<div class="mb-12">
+<h4 class="text-label-sm uppercase tracking-widest text-primary mb-4 font-bold">Climate Control Series</h4>
+<h1 class="text-display-lg font-bold text-on-background leading-none mb-6 tracking-tight">Aero Pure X1</h1>
+<p class="text-body-md text-on-surface-variant font-light leading-relaxed max-w-xl">
+                            Engineered for absolute atmospheric precision. The Aero Pure X1 redefines spatial cooling with whisper-quiet operation and an elegant, architectural form factor that enhances any interior.
+                        </p>
+</div>
+<!-- Price & Rating -->
+<div class="flex items-end justify-between mb-12 pb-12 bg-surface-container-low rounded-[2rem] p-8 ambient-shadow">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="text-[2.5rem] font-bold text-on-background leading-none tracking-tight">$899</span>
+<span class="text-title-md text-outline line-through font-light mt-2">$1,099</span>
+</div>
+<span class="inline-block px-3 py-1 rounded-md bg-error-container text-on-error-container text-xs font-medium">Save $200 (18% off)</span>
+</div>
+<div class="flex flex-col items-end">
+<div class="flex items-center text-[#f59e0b] mb-1">
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star_half" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<span class="text-sm text-on-surface-variant font-medium">4.8 <span class="font-light text-outline">(128 Reviews)</span></span>
+</div>
+</div>
+<!-- Tech Specs (Bento Style) -->
+<div class="mb-16">
+<h3 class="text-headline-lg font-semibold text-on-background mb-8 tracking-tight">Technical Precision</h3>
+<div class="grid grid-cols-2 gap-4">
+<!-- Spec Card -->
+<div class="bg-surface-container-lowest p-6 rounded-[1.5rem] ambient-shadow flex flex-col gap-4 group hover:bg-surface-container transition-colors duration-500">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-white transition-colors">
+<span class="material-symbols-outlined" data-icon="ac_unit">ac_unit</span>
+</div>
+<div>
+<h4 class="text-title-md font-medium text-on-background mb-1">Cooling Area</h4>
+<p class="text-body-md text-on-surface-variant font-light">Up to 800 sq ft.</p>
+</div>
+</div>
+<!-- Spec Card -->
+<div class="bg-surface-container-lowest p-6 rounded-[1.5rem] ambient-shadow flex flex-col gap-4 group hover:bg-surface-container transition-colors duration-500">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-white transition-colors">
+<span class="material-symbols-outlined" data-icon="volume_off">volume_off</span>
+</div>
+<div>
+<h4 class="text-title-md font-medium text-on-background mb-1">Noise Level</h4>
+<p class="text-body-md text-on-surface-variant font-light">Ultra-quiet 24 dB</p>
+</div>
+</div>
+<!-- Spec Card -->
+<div class="bg-surface-container-lowest p-6 rounded-[1.5rem] ambient-shadow flex flex-col gap-4 group hover:bg-surface-container transition-colors duration-500">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-white transition-colors">
+<span class="material-symbols-outlined" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+</div>
+<div>
+<h4 class="text-title-md font-medium text-on-background mb-1">Efficiency</h4>
+<p class="text-body-md text-on-surface-variant font-light">A++ Rating</p>
+</div>
+</div>
+<!-- Spec Card -->
+<div class="bg-surface-container-lowest p-6 rounded-[1.5rem] ambient-shadow flex flex-col gap-4 group hover:bg-surface-container transition-colors duration-500">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-white transition-colors">
+<span class="material-symbols-outlined" data-icon="wifi">wifi</span>
+</div>
+<div>
+<h4 class="text-title-md font-medium text-on-background mb-1">Connectivity</h4>
+<p class="text-body-md text-on-surface-variant font-light">App &amp; Voice Control</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Fixed Bottom CTAs (Mobile) / Inline CTAs (Desktop) -->
+<div class="fixed bottom-0 left-0 w-full md:relative md:w-auto bg-surface-container-lowest/90 md:bg-transparent backdrop-blur-xl md:backdrop-blur-none p-6 md:p-0 z-40 border-t border-outline-variant/10 md:border-none flex flex-col gap-4">
+<button class="w-full btn-primary-gradient text-on-primary py-5 rounded-[1rem] text-title-md font-medium tracking-wide shadow-[0_8px_20px_rgb(0,88,189,0.3)] hover:opacity-90 transition-all duration-300 transform active:scale-[0.98] flex items-center justify-center gap-2">
+<span>Buy Now</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full bg-surface-container-highest text-on-surface py-5 rounded-[1rem] text-title-md font-medium tracking-wide hover:bg-surface-variant transition-all duration-300 transform active:scale-[0.98] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="shopping_cart">shopping_cart</span>
+<span>Add to Cart</span>
+</button>
+<p class="text-center text-xs text-on-surface-variant font-light mt-2 md:mt-4 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[1rem]" data-icon="local_shipping">local_shipping</span>
+                            Free expedited shipping. Returns within 30 days.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Editorial Storytelling Section (Bleed Layout) -->
+<div class="mt-32 w-full bg-surface-container-low py-32 overflow-hidden relative">
+<div class="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-display-lg font-bold text-on-background mb-8 leading-[1.1] tracking-tighter max-w-lg">
+                            Breathe <br/><span class="text-gradient">Absolute Purity.</span>
+</h2>
+<p class="text-title-md text-on-surface-variant font-light leading-relaxed mb-8 max-w-md">
+                            Beyond cooling, the Aero Pure X1 integrates an advanced HEPA 14 filtration system, capturing 99.99% of airborne particles. It's not just an appliance; it's an atmospheric curator.
+                        </p>
+<a class="inline-flex items-center gap-2 text-primary font-medium hover:opacity-80 transition-opacity" href="#">
+                            Explore Filtration Technology 
+                            <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+<div class="relative h-[614px] md:h-[819px] w-[120%] -ml-[10%] md:w-full md:ml-0 rounded-[2rem] overflow-hidden">
+<img alt="Interior Scene" class="w-full h-full object-cover" data-alt="luxury bright minimalist living room with large windows sunlight streaming in highlighting a sleek modern air purifier unit in the corner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLZoDzbk22yzAN_2jKZ5fXzPl9N6gf-bhQrbybN6cpQ3iVLdwr_5TcB8zk4YZdgFpUItu1NkfKi4JUOUuZ_OcumIiwgpEse3n71io_lqaFEUXVXAJXJjDE2ivowf_oNc8XQia4S61A__4VdAeIIcVuMg_ppgAfoNs9ABCaALc27kzvqBXMQ4nl3CVXxUrMj24kdogaZjN5zN40Nty1CGCCDv2zVxXukh6DFvjZ11BHIjm-ghttzb2SYBDd_BFbnSDsAvHPBpnqe50"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Reviews Section -->
+<div class="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24 py-32">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div>
+<h2 class="text-headline-lg font-bold text-on-background mb-2 tracking-tight">Curated Perspectives</h2>
+<p class="text-body-md text-on-surface-variant font-light">Insights from Aero Pure X1 owners.</p>
+</div>
+<button class="text-primary font-medium hover:opacity-80 transition-opacity flex items-center gap-2">
+                    View All 128 Reviews <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Review Card -->
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] ambient-shadow flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-xs text-outline font-light">2 days ago</span>
+</div>
+<h4 class="text-title-md font-medium text-on-background">"Silent &amp; Architectural"</h4>
+<p class="text-body-md text-on-surface-variant font-light leading-relaxed flex-grow">
+                        "I was hesitant to place a cooler in my primary living space, but the X1 is basically a piece of modern art. The operation is genuinely imperceptible until you feel the temperature drop."
+                    </p>
+<div class="flex items-center gap-3 pt-4 border-t border-surface-variant">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-medium text-sm">EL</div>
+<div>
+<p class="text-sm font-medium text-on-background">Elena R.</p>
+<p class="text-xs text-on-surface-variant font-light flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-green-600" data-icon="verified">verified</span> Verified Buyer
+                            </p>
+</div>
+</div>
+</div>
+<!-- Review Card -->
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] ambient-shadow flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star_half" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<span class="text-xs text-outline font-light">1 week ago</span>
+</div>
+<h4 class="text-title-md font-medium text-on-background">"Incredible Performance"</h4>
+<p class="text-body-md text-on-surface-variant font-light leading-relaxed flex-grow">
+                        "Cools down my entire loft studio in minutes. The app integration is flawless. Only giving 4.5 stars because I wish the cord was slightly longer for my specific setup."
+                    </p>
+<div class="flex items-center gap-3 pt-4 border-t border-surface-variant">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-medium text-sm">MT</div>
+<div>
+<p class="text-sm font-medium text-on-background">Marcus T.</p>
+<p class="text-xs text-on-surface-variant font-light flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-green-600" data-icon="verified">verified</span> Verified Buyer
+                            </p>
+</div>
+</div>
+</div>
+<!-- Review Card -->
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] ambient-shadow flex flex-col gap-6 hidden md:flex">
+<div class="flex items-center justify-between">
+<div class="flex items-center text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-xs text-outline font-light">3 weeks ago</span>
+</div>
+<h4 class="text-title-md font-medium text-on-background">"A breath of fresh air"</h4>
+<p class="text-body-md text-on-surface-variant font-light leading-relaxed flex-grow">
+                        "Living in a dusty city, the HEPA filter feature is a game-changer. The air genuinely feels lighter. Worth every penny for the build quality alone."
+                    </p>
+<div class="flex items-center gap-3 pt-4 border-t border-surface-variant">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-medium text-sm">SJ</div>
+<div>
+<p class="text-sm font-medium text-on-background">Sarah J.</p>
+<p class="text-xs text-on-surface-variant font-light flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-green-600" data-icon="verified">verified</span> Verified Buyer
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="relative overflow-hidden w-full pt-32 pb-12 bg-zinc-950 dark:bg-black flex flex-col md:flex-row justify-between items-end w-full px-12 max-w-[1920px] mx-auto flat no shadows">
+<div class="w-full flex flex-col md:flex-row justify-between items-end z-10">
+<div class="mb-12 md:mb-0">
+<nav class="flex flex-col gap-4">
+<a class="text-zinc-500 hover:text-zinc-300 transition-colors font-['Inter'] font-light text-zinc-500 hover:translate-x-1 transition-transform duration-300" href="#">Sustainability</a>
+<a class="text-zinc-500 hover:text-zinc-300 transition-colors font-['Inter'] font-light text-zinc-500 hover:translate-x-1 transition-transform duration-300" href="#">Technical Specs</a>
+<a class="text-zinc-500 hover:text-zinc-300 transition-colors font-['Inter'] font-light text-zinc-500 hover:translate-x-1 transition-transform duration-300" href="#">Global Shipping</a>
+<a class="text-zinc-500 hover:text-zinc-300 transition-colors font-['Inter'] font-light text-zinc-500 hover:translate-x-1 transition-transform duration-300" href="#">Press Kit</a>
+</nav>
+</div>
+<div class="text-right">
+<p class="font-['Inter'] font-light text-zinc-500 text-sm">© 2024 Siddham Coolers. Precision in every breath.</p>
+</div>
+</div>
+<div class="text-[12rem] font-black text-zinc-900/30 absolute -bottom-10 left-0 leading-none select-none pointer-events-none">
+            SIDDHAM
+        </div>
+</footer>
+</body></html>

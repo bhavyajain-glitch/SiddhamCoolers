@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Siddham Coolers - Atmospheric Precision</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#dadada",
+                        "primary-container": "#1470e8",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#656464",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#e5e2e1",
+                        "outline": "#727785",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary": "#5f5e5e",
+                        "primary": "#0058bd",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#adc6ff",
+                        "surface": "#f9f9f9",
+                        "inverse-surface": "#2f3131",
+                        "background": "#f9f9f9",
+                        "surface-variant": "#e2e2e2",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#737575",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-tint": "#005ac2",
+                        "surface-bright": "#f9f9f9",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#fefcff",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "secondary-container": "#e5e2e1",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-surface": "#1a1c1c",
+                        "surface-container": "#eeeeee",
+                        "tertiary": "#5a5c5c",
+                        "outline-variant": "#c2c6d6",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-fixed": "#d8e2ff",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-primary-fixed-variant": "#004494",
+                        "inverse-primary": "#adc6ff",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary-container": "#fcfcfc",
+                        "on-surface-variant": "#414754",
+                        "on-primary-fixed": "#001a41",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "inverse-on-surface": "#f1f1f1"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/70 dark:bg-zinc-900/70 backdrop-blur-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] no-border">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-[1920px] mx-auto">
+<!-- Brand Logo -->
+<a class="text-2xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 font-headline" href="#">
+                Siddham
+            </a>
+<!-- Navigation Links (Web) -->
+<div class="hidden md:flex items-center gap-8 font-['Inter'] font-light tracking-tight">
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors hover:opacity-80 duration-500 ease-out" href="#">Technology</a>
+<a class="text-zinc-900 dark:text-zinc-50 font-medium border-b-2 border-blue-600 pb-1 hover:opacity-80 transition-all duration-500 ease-out" href="#">Products</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors hover:opacity-80 duration-500 ease-out" href="#">Stories</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors hover:opacity-80 duration-500 ease-out" href="#">Support</a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-6">
+<a class="hidden sm:inline-block font-['Inter'] font-light tracking-tight text-blue-600 dark:text-blue-400 hover:opacity-80 transition-all duration-500 ease-out active:scale-95 duration-300" href="#">
+                    Shop Now
+                </a>
+<button class="text-zinc-900 dark:text-zinc-50 hover:opacity-80 transition-all duration-500 ease-out active:scale-95 duration-300">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-32">
+<!-- Hero Section: Asymmetric Bleed -->
+<section class="relative w-full min-h-[921px] flex flex-col md:flex-row items-center bg-surface overflow-hidden">
+<div class="w-full md:w-5/12 px-8 md:pl-24 z-10 pt-24 md:pt-0">
+<span class="text-label-sm uppercase tracking-widest text-primary-container font-bold mb-4 block">New Release</span>
+<h1 class="text-display-lg leading-tight font-headline font-bold text-on-background mb-6 tracking-tighter">
+                    Aero Pure X1.<br/>
+<span class="text-on-surface-variant font-light text-[2.5rem]">Breathe Precision.</span>
+</h1>
+<p class="text-body-md text-on-surface-variant max-w-md mb-10 font-light leading-relaxed">
+                    Engineered with aerospace-grade aerodynamics, the X1 delivers absolute climate control with zero decibel intrusion. Redefining the atmosphere of your space.
+                </p>
+<button class="bg-gradient-to-b from-primary to-primary-container text-on-primary rounded-xl px-8 py-4 text-title-md font-medium transition-all duration-300 ease-[cubic-bezier(0.2,0,0,1)] hover:shadow-[0_10px_40px_rgba(0,88,189,0.2)]">
+                    Buy Now
+                </button>
+</div>
+<div class="w-full md:w-7/12 h-[614px] md:h-[921px] relative mt-12 md:mt-0">
+<!-- Bleed imagery concept -->
+<img alt="Aero Pure X1" class="w-full h-full object-cover object-left" data-alt="High-end sleek industrial cooler product shot in a minimalist concrete architectural space with soft diffused light and strong shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9rlk6xj5FIPNPFtxLGlsBrLhhmndeJnFaoE_9Aa3rRwuVDJiws_wr0_2bWTovkUlrGHPRurt7yxwZ1M_uzaYrpt01NwBhFGccQTQEOQXK_i5MzrCtsR1Ch1qEAoDM4vIErN0hQ5wDKknUTiuJ1TMiLZZLJmIB3ui_iKBIjdoPfgdmXtZ5FlnFdkYylm1ZOtF7z_wwy2ahbQgljXgt1DyoFdDv7vjNhbk1n3PeguSW1e6EKWMuc_hW1arLRZEcFpUuE9CY-lK2bs4"/>
+<!-- Ambient gradient overlay for blending -->
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/50 to-transparent"></div>
+</div>
+</section>
+<!-- Category Minimal Navigation -->
+<section class="w-full bg-surface-container-low py-12 md:py-20 px-8">
+<div class="max-w-[1920px] mx-auto flex flex-col md:flex-row items-baseline justify-between mb-16 mt-[80px]">
+<h2 class="text-headline-lg font-semibold text-on-background mb-6 md:mb-0">Curated Collections</h2>
+<div class="flex flex-wrap gap-4">
+<button class="px-6 py-3 bg-surface-container-lowest text-on-surface rounded-full text-body-md font-medium shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition-all duration-300 ease-[cubic-bezier(0.2,0,0,1)] hover:bg-surface hover:-translate-y-1">
+                        All Models
+                    </button>
+<button class="px-6 py-3 bg-transparent text-on-surface-variant rounded-full text-body-md font-light transition-all duration-300 ease-[cubic-bezier(0.2,0,0,1)] hover:bg-surface-container">
+                        Desert Series
+                    </button>
+<button class="px-6 py-3 bg-transparent text-on-surface-variant rounded-full text-body-md font-light transition-all duration-300 ease-[cubic-bezier(0.2,0,0,1)] hover:bg-surface-container">
+                        Tower Series
+                    </button>
+<button class="px-6 py-3 bg-transparent text-on-surface-variant rounded-full text-body-md font-light transition-all duration-300 ease-[cubic-bezier(0.2,0,0,1)] hover:bg-surface-container">
+                        Personal
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Product Display -->
+<div class="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Product Card 1 (Large) -->
+<a class="group md:col-span-2 relative bg-surface-container-lowest rounded-xl overflow-hidden min-h-[500px] flex flex-col justify-end p-10 shadow-[0_4px_40px_rgba(26,28,28,0.04)] transition-transform duration-500 ease-[cubic-bezier(0.2,0,0,1)] hover:shadow-[0_10px_60px_rgba(26,28,28,0.06)]" href="#">
+<img alt="Altitude T4" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.2,0,0,1)] group-hover:scale-105" data-alt="Minimalist tower cooler in a modern white living room with soft natural sunlight filtering through sheer curtains" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgAsSJHE18MLo6errYHYCg3-UFDWa8_33fHwJO5iCQvVAlL9DOU-atbjwgsBsMQpZ_DLYJ4anHKGuRGXc4fKDat1LA2ANyN3Me83gjv9vH7RRwCtG0aPXth2j0Znr7TCEC0UM0gOHyzJWU5Jkc-QTnQ91XpLad1jWuOgllyV_QLtS4YfR6qTV3ihlGxmUOqcbLqkiHDBpMmnM_vu6Az9MwAoqYqfrehUNBqcJPvyyuOK8C81OM9ORFVf82RGNtAa_WxknO_15qyzY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+<div class="relative z-10 flex justify-between items-end w-full">
+<div>
+<span class="text-label-sm uppercase tracking-widest text-primary-container font-bold block mb-2">Tower Series</span>
+<h3 class="text-title-md font-semibold text-on-background mb-1 text-[2rem]">Altitude T4</h3>
+<p class="text-body-md text-on-surface-variant font-light flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                                4.9 <span class="text-outline ml-1">(128 Reviews)</span>
+</p>
+</div>
+<div class="text-right">
+<p class="text-title-md font-medium text-on-background">$450</p>
+</div>
+</div>
+</a>
+<!-- Product Card 2 -->
+<a class="group relative bg-surface-container-lowest rounded-xl overflow-hidden min-h-[500px] flex flex-col justify-end p-8 shadow-[0_4px_40px_rgba(26,28,28,0.04)] transition-transform duration-500 ease-[cubic-bezier(0.2,0,0,1)] hover:-translate-y-2" href="#">
+<div class="absolute inset-0 bg-surface-container p-6 flex items-center justify-center">
+<img alt="Zephyr Mini" class="w-full h-auto object-contain transition-transform duration-700 ease-[cubic-bezier(0.2,0,0,1)] group-hover:scale-105 mix-blend-multiply" data-alt="Compact sleek personal desk cooler next to a modern laptop on a light wood desk, clean aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz6zwhiuQHQjzcJoxUeo5ARv1nmckeJ7U_3xmRZZlTYNoSp0EVmROBAZA_j8grUE-0Qr2Ib-CiKI1uQ6-3upc7ghuwP8N_fpjexUOWs9iIhEsO8zs-IL5jI83uY2OjwjT93Yt2X1BC-FT81Fq_f2carWxpf0t-aKMHuJQsoGcqtIT_nzGJwz_7-oInIJCKk2gF8DZ51l_m9QAt_huMnE1gGLQLf8W5Nam_c9c6Q-DzgepBpZ5x1N8VnBSNO4vAvBe76kpzc3M0cXo"/>
+</div>
+<div class="relative z-10 mt-auto bg-surface/80 backdrop-blur-md rounded-lg p-4 w-full">
+<span class="text-label-sm uppercase tracking-widest text-primary-container font-bold block mb-1">Personal</span>
+<div class="flex justify-between items-start">
+<h3 class="text-title-md font-semibold text-on-background mb-1">Zephyr Mini</h3>
+<p class="text-title-md font-medium text-on-background">$120</p>
+</div>
+<p class="text-body-md text-on-surface-variant font-light flex items-center gap-1 text-[0.8rem]">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                            4.7
+                        </p>
+</div>
+</a>
+<!-- Product Card 3 -->
+<a class="group relative bg-surface-container-lowest rounded-xl overflow-hidden min-h-[400px] flex flex-col justify-end p-8 shadow-[0_4px_40px_rgba(26,28,28,0.04)] transition-transform duration-500 ease-[cubic-bezier(0.2,0,0,1)] hover:-translate-y-2" href="#">
+<div class="absolute inset-0 bg-surface-container p-6 flex items-center justify-center">
+<img alt="Dune Master V8" class="w-full h-auto object-contain transition-transform duration-700 ease-[cubic-bezier(0.2,0,0,1)] group-hover:scale-105 mix-blend-multiply" data-alt="Heavy duty minimalist industrial desert cooler in a spacious loft studio with concrete floors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1m-ZdUA7ZlDxwcHU_SshNzO2dIbZ6k4AanSI1uMF3GGki4703cjkrnJ7l4PMQEpqj6_D5uTBRb4MRHAVQaD11-Aw34DzMygSt_cGASp_vKryB4heOdLKx-bRqIZLj_Aa1TEgbwZyMhmyX0ciVfxYSviwoS0Wo9DCjxB_OTIe18fCUYW3HNWD6Uv_0TzFJHqbpAvRPqTthz6N7cNDjPppDQfuKeyO0kLA9_2NKANy5IDnErmxKqe2HzjuporbFxYd3cN6T-7sy67I"/>
+</div>
+<div class="relative z-10 mt-auto bg-surface/80 backdrop-blur-md rounded-lg p-4 w-full">
+<span class="text-label-sm uppercase tracking-widest text-primary-container font-bold block mb-1">Desert Series</span>
+<div class="flex justify-between items-start">
+<h3 class="text-title-md font-semibold text-on-background mb-1">Dune Master V8</h3>
+<p class="text-title-md font-medium text-on-background">$680</p>
+</div>
+<p class="text-body-md text-on-surface-variant font-light flex items-center gap-1 text-[0.8rem]">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+                            4.9
+                        </p>
+</div>
+</a>
+<!-- Feature Highlight / Text Card -->
+<div class="md:col-span-2 bg-surface rounded-xl p-12 flex flex-col justify-center shadow-[0_4px_40px_rgba(26,28,28,0.04)]">
+<span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-fixed text-on-primary-fixed mb-8">
+<span class="material-symbols-outlined" data-icon="air">air</span>
+</span>
+<h3 class="text-headline-lg font-semibold text-on-background mb-4 text-[2rem]">Unprecedented Airflow.</h3>
+<p class="text-body-md text-on-surface-variant font-light max-w-xl text-[1.1rem] leading-relaxed mb-8">
+                        Our proprietary honeycomb cooling media paired with vortex fan technology delivers up to 40% more cooling efficiency while reducing energy consumption.
+                    </p>
+<div class="flex gap-4">
+<span class="bg-primary-fixed text-on-primary-fixed px-4 py-2 rounded-full text-label-sm font-bold tracking-wide">SILENT TECH™</span>
+<span class="bg-primary-fixed text-on-primary-fixed px-4 py-2 rounded-full text-label-sm font-bold tracking-wide">ECO-COOL</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="relative overflow-hidden w-full pt-32 pb-12 bg-zinc-950 dark:bg-black tonal-shift-high flat no shadows">
+<div class="flex flex-col md:flex-row justify-between items-end w-full px-12 max-w-[1920px] mx-auto z-10 relative">
+<!-- Links -->
+<div class="flex flex-col gap-4 mb-16 md:mb-0">
+<a class="font-['Inter'] font-light text-zinc-500 hover:text-zinc-300 transition-colors hover:translate-x-1 duration-300" href="#">Sustainability</a>
+<a class="font-['Inter'] font-light text-zinc-500 hover:text-zinc-300 transition-colors hover:translate-x-1 duration-300" href="#">Technical Specs</a>
+<a class="font-['Inter'] font-light text-zinc-500 hover:text-zinc-300 transition-colors hover:translate-x-1 duration-300" href="#">Global Shipping</a>
+<a class="font-['Inter'] font-light text-zinc-500 hover:text-zinc-300 transition-colors hover:translate-x-1 duration-300" href="#">Press Kit</a>
+</div>
+<!-- Copyright -->
+<div class="text-right">
+<p class="font-['Inter'] font-light text-zinc-500 text-sm">
+                    © 2024 Siddham Coolers. Precision in every breath.
+                </p>
+</div>
+</div>
+<!-- Large Background Brand Text -->
+<div class="text-[12rem] font-black text-zinc-900/30 absolute -bottom-10 left-0 leading-none select-none z-0">
+            Siddham
+        </div>
+</footer>
+</body></html>

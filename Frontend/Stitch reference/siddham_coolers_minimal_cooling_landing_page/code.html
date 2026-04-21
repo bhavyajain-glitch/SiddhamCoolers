@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Siddham Coolers - Atmospheric Precision</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#414754",
+                    "on-tertiary-container": "#fcfcfc",
+                    "on-background": "#1a1c1c",
+                    "on-secondary-fixed-variant": "#474646",
+                    "inverse-primary": "#adc6ff",
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-primary-fixed": "#001a41",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-surface": "#1a1c1c",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-primary-fixed-variant": "#004494",
+                    "primary-fixed": "#d8e2ff",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-container": "#eeeeee",
+                    "tertiary": "#5a5c5c",
+                    "outline-variant": "#c2c6d6",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#f9f9f9",
+                    "tertiary-container": "#737575",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e2e2e2",
+                    "surface-tint": "#005ac2",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "surface-container-low": "#f3f3f3",
+                    "secondary-container": "#e5e2e1",
+                    "on-primary-container": "#fefcff",
+                    "on-primary": "#ffffff",
+                    "secondary": "#5f5e5e",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#adc6ff",
+                    "primary": "#0058bd",
+                    "primary-container": "#1470e8",
+                    "surface-dim": "#dadada",
+                    "error-container": "#ffdad6",
+                    "outline": "#727785",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-secondary-container": "#656464",
+                    "on-error": "#ffffff",
+                    "background": "#f9f9f9",
+                    "surface": "#f9f9f9",
+                    "inverse-surface": "#2f3131"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Inter", "sans-serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        /* Ambient Shadow Utilities derived from Design System */
+        .shadow-ambient {
+            box-shadow: 0 40px 60px -15px rgba(26, 28, 28, 0.05);
+        }
+        .shadow-ambient-sm {
+            box-shadow: 0 20px 40px -10px rgba(26, 28, 28, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-background font-body antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar Component (From JSON) -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/70 backdrop-blur-2xl font-['Inter'] font-light tracking-tight shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500 ease-out">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-[1920px] mx-auto">
+<!-- Brand Logo -->
+<a class="text-2xl font-bold tracking-tighter text-zinc-900 hover:opacity-80 transition-all duration-500 ease-out" href="#">
+                Siddham
+            </a>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex space-x-12 items-center">
+<a class="text-zinc-500 hover:text-zinc-900 transition-colors" href="#">Technology</a>
+<a class="text-zinc-500 hover:text-zinc-900 transition-colors" href="#">Products</a>
+<a class="text-zinc-500 hover:text-zinc-900 transition-colors" href="#">Stories</a>
+<a class="text-zinc-500 hover:text-zinc-900 transition-colors" href="#">Support</a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center space-x-6">
+<a class="hidden md:inline-flex items-center justify-center bg-gradient-to-b from-primary to-primary-container text-on-primary font-medium px-6 py-2.5 rounded-xl hover:opacity-80 transition-all duration-500 ease-out" href="#">
+                    Shop Now
+                </a>
+<button class="text-blue-600 hover:opacity-80 transition-all duration-500 ease-out flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- 1. HERO SECTION -->
+<header class="relative w-full min-h-screen flex items-center justify-center bg-surface overflow-hidden pt-32 pb-24">
+<!-- Soft airflow gradient background -->
+<div class="absolute inset-0 bg-gradient-to-br from-surface via-surface to-primary-fixed/30 opacity-70"></div>
+<div class="relative z-10 max-w-[1920px] mx-auto px-6 md:px-12 flex flex-col items-center w-full">
+<div class="text-center max-w-4xl mx-auto mb-16">
+<h1 class="font-headline text-6xl md:text-[5.5rem] font-bold text-on-background leading-[1.05] tracking-tight mb-6">
+                    Minimal Cooling.
+                </h1>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant font-light tracking-wide max-w-2xl mx-auto">
+                    Engineered for maximum airflow and silent performance. The aesthetics of pure atmosphere.
+                </p>
+</div>
+<div class="relative w-full max-w-5xl mx-auto flex justify-center items-center">
+<!-- High-end product shot -->
+<img alt="Siddham Cooler" class="w-full max-w-2xl object-cover rounded-[2rem] shadow-ambient z-10 mix-blend-multiply" data-alt="Sleek, modern minimalist white air cooler standing vertically against a pristine bright studio background with soft dramatic studio lighting highlighting its matte finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaarBtbgwXIN9_HnRgXkO7U_FO7qee87FAVS-Yrg_mgS8DLRBbAHkkBuvI2r5mwXiRbkLqGuHzHAW7uYvtCVFFkjgPViP6eQ9oWNHeqwqIT_kuAUh-vAttZfl3G9Vl_XG4xXzWCn9rqJbxA_hQ1MYVIcJaBeDKNUZvQ7qEtqUILiSAjFvuM1zjlV7kVnG2te2WBfqpqcxt5ER0XtEAtSsar6KVAYmFgf_ZZ027EXrHbqVFlWkP2TwM-BsqGxXu6i4_Nyx4K3NvQNo"/>
+<!-- Floating UI Card -->
+<div class="absolute bottom-10 right-0 md:-right-10 bg-surface-container-lowest/80 backdrop-blur-2xl p-8 rounded-2xl shadow-ambient z-20 w-80 ring-1 ring-outline-variant/15 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-[0.6875rem] font-bold uppercase tracking-widest text-primary mb-1 block">Flagship</span>
+<h3 class="font-headline text-[1.125rem] font-medium text-on-background">Aero Pure X1</h3>
+</div>
+<span class="font-body text-lg font-light text-on-surface-variant">$499</span>
+</div>
+<div class="flex gap-2 mb-2">
+<span class="bg-primary-fixed/60 text-on-primary-fixed rounded-full px-3 py-1 text-[0.6875rem] font-bold uppercase tracking-wider">Silent Mode</span>
+<span class="bg-primary-fixed/60 text-on-primary-fixed rounded-full px-3 py-1 text-[0.6875rem] font-bold uppercase tracking-wider">Eco-Cool</span>
+</div>
+<button class="w-full bg-gradient-to-b from-primary to-primary-container text-on-primary font-medium py-3 rounded-xl hover:opacity-90 transition-opacity">
+                        Buy Now
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<!-- 2. BRAND INTRO (Tonal Shift) -->
+<section class="w-full bg-surface-container-low py-40 px-6 md:px-12">
+<div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+<span class="text-[0.6875rem] font-bold uppercase tracking-widest text-primary mb-8">Who we are</span>
+<h2 class="font-headline text-4xl md:text-[2.5rem] font-semibold text-on-background leading-tight mb-10">
+                We believe atmosphere should be felt, not heard.
+            </h2>
+<p class="font-body text-lg md:text-xl text-on-surface-variant font-light leading-relaxed max-w-3xl">
+                Siddham was founded on a singular premise: climate control is a core component of a well-designed life. By merging aerospace-grade fluid dynamics with architectural minimalism, we've created cooling systems that integrate seamlessly into your environment while outperforming industrial standards.
+            </p>
+</div>
+</section>
+<!-- 3. PERFORMANCE -->
+<section class="w-full bg-surface py-32 px-6 md:px-12">
+<div class="max-w-6xl mx-auto">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-1/2">
+<h2 class="font-headline text-[2.0rem] font-semibold text-on-background mb-6">What makes it powerful.</h2>
+<p class="font-body text-[0.875rem] text-on-surface-variant font-light leading-relaxed mb-10 max-w-md">
+                        Our proprietary cyclonic delivery system compresses and accelerates air, resulting in a deeper, colder throw that drops room temperatures significantly faster than conventional bladed systems.
+                    </p>
+</div>
+<div class="w-full md:w-1/2 flex flex-col gap-8">
+<!-- Regular Cooler Bar -->
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-end">
+<span class="text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface-variant">Regular Cooler</span>
+<span class="text-[0.875rem] font-light text-on-surface-variant">Standard Airflow</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[60%] rounded-full"></div>
+</div>
+</div>
+<!-- Siddham Cooler Bar -->
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-end">
+<span class="text-[0.6875rem] font-bold uppercase tracking-widest text-primary">Siddham Aero Pure</span>
+<span class="text-[0.875rem] font-medium text-primary">+30% Faster Cooling</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[90%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. SHOWCASE -->
+<section class="w-full bg-surface-container-low py-32 px-6 md:px-12">
+<div class="max-w-[1920px] mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-headline text-[2.0rem] font-semibold text-on-background">Meet Our Coolers.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+<!-- Product 1 -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-ambient-sm overflow-hidden group cursor-pointer">
+<div class="h-96 w-full bg-surface-container flex items-center justify-center overflow-hidden relative">
+<img alt="Aero Compact" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.2,0,0,1)]" data-alt="Minimalist white cylindrical object resembling a sleek modern air cooler in a bright sunlit studio with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh3I33MJjNx2KBFjLY_SiI7DoKzUAatSHQ2a60d5ICdE74GOFA9JzDeq7OPIf9vv_CUsuEkHlKDK-iauSoCpoikoqf7X3CRvlcBoul2CCgOm51_ULisdrqZMgi7QUhMIgz2EB1hcbSB55TkJd0IJaI5nLaGj31ChgNi7NgfC69ExHhV67ccu9F5YN5yx_M97ZFpf3T-L4ybJmyGLsumZ1fZwtn7kqRocjcF5UUGTrvDWcHYdcKOa2pDMES4IGqK6aL5PM1PKF_o4Y"/>
+</div>
+<div class="p-8 flex flex-col items-center text-center">
+<span class="text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface-variant mb-2">Personal Series</span>
+<h3 class="font-headline text-[1.125rem] font-medium text-on-background mb-4">Aero Compact</h3>
+<p class="font-body text-[0.875rem] text-on-surface-variant font-light mb-6">Perfect for focused cooling in workspaces and bedrooms.</p>
+<span class="font-body text-lg font-light text-on-background">$249</span>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-ambient-sm overflow-hidden group cursor-pointer relative -top-0 md:-top-12 z-10">
+<div class="h-[28rem] w-full bg-surface-container flex items-center justify-center overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/50 to-transparent z-10"></div>
+<img alt="Aero Pure X1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.2,0,0,1)]" data-alt="Premium tall white air cooler standing elegantly on a light oak wooden floor in a minimalist living room setting with natural morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCFbl9f3Y6Y6LqnzoR7d5gFLwzVMRKCAto_NrzCvrnf75DLUeiXcEHP5uRfCzX77LRw-kOeHMhp5OsiDzpwdofsICJTm-s6uagEmhFxU8GgNEEgaxJq5AOJYUsxKG3XLPaOx1yVKnLynXn-qNGzSiYknLhaD4xQzjli6dP7ODL9iB8IpvY5myYdkKny7tV7Vb-dvkkLaVErhOBJ_HdtptzwaIXL7M8yTCc4Pt6aNXWZKF2P3Sr6FSHRQmK4yfy08CbPPMBtJBizf0"/>
+</div>
+<div class="p-8 flex flex-col items-center text-center">
+<span class="text-[0.6875rem] font-bold uppercase tracking-widest text-primary mb-2">Flagship</span>
+<h3 class="font-headline text-[1.125rem] font-medium text-on-background mb-4">Aero Pure X1</h3>
+<p class="font-body text-[0.875rem] text-on-surface-variant font-light mb-6">Uncompromising performance for large living spaces.</p>
+<span class="font-body text-lg font-light text-on-background">$499</span>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-ambient-sm overflow-hidden group cursor-pointer">
+<div class="h-96 w-full bg-surface-container flex items-center justify-center overflow-hidden relative">
+<img alt="Aero Pro Max" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.2,0,0,1)]" data-alt="Industrial sleek black air cooling tower unit standing against a concrete wall with dramatic side lighting emphasizing its modern aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC220LwUxvHHtlFHhavRKHI6pwKOTN9VjfbvIuhnoBvCqTXdvnjmqjc336JcW42j0aCdxaa8lcrJnKMj2P7qxQRqdDKNlbz7S0nJKCKHq1WGg_hbyp1-1Pfn9KUtM5Akde-iNuMx0ZhgZ8gnSfaZMBxB7ep0XzcHG-HGY98uvalzH86RN-ZI8W4bEcvCIpBG2iLcjFpQXY3aQe4qP88Q82NPGQjPKzZgS0OD6IBLOF12HZG6MlOWcXFKyV96GAN20i4Gz-Y2hXw4qE"/>
+</div>
+<div class="p-8 flex flex-col items-center text-center">
+<span class="text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface-variant mb-2">Industrial Series</span>
+<h3 class="font-headline text-[1.125rem] font-medium text-on-background mb-4">Aero Pro Max</h3>
+<p class="font-body text-[0.875rem] text-on-surface-variant font-light mb-6">Maximum capacity cooling for commercial environments.</p>
+<span class="font-body text-lg font-light text-on-background">$899</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. FEATURE STORY (Asymmetric Split) -->
+<section class="w-full bg-surface py-32 px-6 md:px-12 overflow-hidden">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
+<!-- Text Content -->
+<div class="w-full md:w-5/12 order-2 md:order-1 flex flex-col items-start">
+<span class="text-[0.6875rem] font-bold uppercase tracking-widest text-primary mb-6">Fluid Dynamics</span>
+<h2 class="font-headline text-[2.0rem] font-semibold text-on-background leading-tight mb-8">
+                    Enhanced Airflow Performance.
+                </h2>
+<p class="font-body text-[0.875rem] text-on-surface-variant font-light leading-relaxed mb-12">
+                    We redesigned the impeller from the ground up, utilizing biometric principles to move larger volumes of air at lower RPMs. The result is a cooling experience that is simultaneously more powerful and whisper-quiet.
+                </p>
+<div class="flex flex-wrap gap-4">
+<span class="bg-primary-fixed/80 text-on-primary-fixed rounded-full px-5 py-2.5 text-[0.875rem] font-medium tracking-wide flex items-center gap-2">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 0;">hexagon</span>
+                        Honeycomb Pads
+                    </span>
+<span class="bg-primary-fixed/80 text-on-primary-fixed rounded-full px-5 py-2.5 text-[0.875rem] font-medium tracking-wide flex items-center gap-2">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 0;">air</span>
+                        High Air Throw
+                    </span>
+<span class="bg-primary-fixed/80 text-on-primary-fixed rounded-full px-5 py-2.5 text-[0.875rem] font-medium tracking-wide flex items-center gap-2">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 0;">water_drop</span>
+                        Large 120L Tank
+                    </span>
+</div>
+</div>
+<!-- Image Bleed -->
+<div class="w-full md:w-7/12 order-1 md:order-2 relative">
+<img alt="Cooling Technology Close-up" class="w-full h-[500px] object-cover rounded-[2rem] shadow-ambient" data-alt="Extreme macro close-up of geometric honeycomb cooling pads inside a modern machine bathed in soft cool blue and icy white LED lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWqTZmGnrfDfkSDWIWvsiq4cOjVT8N6zAUyAYB2mf-Cfq77gZKLc8WSlTFCaH_Bh7mVhG8LST05rU-I3q8TqNfGHGxErWMaXIEnpAhTipyzZo_aJLsPyP5d0tDN86crjJxDoHxIHlTbrZ6T1DZyC7SZO5mpDBe0Vu6sAwmdB0jqzDiBoL_uDXD6I1Y99oX1KL_1bxoH5CI0Bh_b40HqpFPObb7b-YwdF1xefK1aH71qqdqGObAtHNX8UUx-U1A0YXqW8RkphHtRG8"/>
+</div>
+</div>
+</section>
+<!-- 6. INSIDE (Bento Grid Specs) -->
+<section class="w-full bg-surface-container-low py-32 px-6 md:px-12">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
+<div class="w-full md:w-1/3 flex flex-col justify-center">
+<h2 class="font-headline text-[2.0rem] font-semibold text-on-background mb-6">What's Inside?</h2>
+<p class="font-body text-[0.875rem] text-on-surface-variant font-light leading-relaxed mb-8">
+                    Precision engineering meets uncompromising material quality. Every component is designed to operate in perfect harmony, maximizing thermal efficiency.
+                </p>
+<button class="self-start text-primary font-medium flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    View Full Specifications
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+<div class="w-full md:w-2/3 grid grid-cols-2 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-ambient-sm flex flex-col justify-between aspect-square">
+<span class="material-symbols-outlined text-4xl text-primary font-light" style="font-variation-settings: 'FILL' 0;">water_voc</span>
+<div>
+<span class="text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface-variant mb-1 block">Capacity</span>
+<h4 class="font-headline text-[2rem] font-medium text-on-background">120L</h4>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-ambient-sm flex flex-col justify-between aspect-square">
+<span class="material-symbols-outlined text-4xl text-primary font-light" style="font-variation-settings: 'FILL' 0;">storm</span>
+<div>
+<span class="text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface-variant mb-1 block">Air Throw</span>
+<h4 class="font-headline text-[2rem] font-medium text-on-background">65 ft</h4>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-ambient-sm flex flex-col justify-between aspect-square">
+<span class="material-symbols-outlined text-4xl text-primary font-light" style="font-variation-settings: 'FILL' 0;">bolt</span>
+<div>
+<span class="text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface-variant mb-1 block">Power Draw</span>
+<h4 class="font-headline text-[2rem] font-medium text-on-background">185W</h4>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-ambient-sm flex flex-col justify-between aspect-square bg-gradient-to-br from-primary to-primary-container text-on-primary">
+<span class="material-symbols-outlined text-4xl text-on-primary/80 font-light" style="font-variation-settings: 'FILL' 0;">aspect_ratio</span>
+<div>
+<span class="text-[0.6875rem] font-bold uppercase tracking-widest text-on-primary/80 mb-1 block">Coverage Area</span>
+<h4 class="font-headline text-[2rem] font-medium text-on-primary">800 sq.ft</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. TECH (Glassmorphism) -->
+<section class="w-full relative py-40 px-6 md:px-12 flex items-center justify-center overflow-hidden">
+<!-- Abstract Cold Image Background -->
+<div class="absolute inset-0 z-0">
+<img alt="Cold background" class="w-full h-full object-cover" data-alt="Abstract soft focus macro photography of frost crystals and icy condensation on glass with cool blue and stark white lighting creating a cold ethereal mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5UJss7CwNAewwLrkdM2nDsy1oIPBoWjLNkNZVrPSUCxD30ECk7vuPBf3qmBOGZn44S62oFAykNY0ThsTdYsuqIJMpIGvv2yFR6XF5QER6rYNReoYMTKaVjoZ2WW3RUHSfWw-hyW3eBNzSYqQ0U-zA2R0Kol5j0Y0qHs1jSdkGbXKyXAV5Eb7IPom9njMb47F8XG-ZbRH2a5tib8AoH9pDHucQbLL1tjeNB5IHXkdpX8rgjMdEmf-Cbr40mRtRM8bDVHmwruoBXVk"/>
+<div class="absolute inset-0 bg-surface/40 backdrop-blur-sm"></div>
+</div>
+<div class="relative z-10 max-w-5xl mx-auto w-full flex flex-col items-center">
+<h2 class="font-headline text-[2.0rem] font-semibold text-on-background text-center mb-16 max-w-2xl">
+                Scientifically Engineered Cooling.
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+<!-- Glass Card 1 -->
+<div class="bg-surface-container-lowest/70 backdrop-blur-2xl rounded-[1.5rem] p-10 ring-1 ring-outline-variant/15 shadow-ambient">
+<span class="material-symbols-outlined text-3xl text-primary mb-6" style="font-variation-settings: 'FILL' 0;">speed</span>
+<h3 class="font-headline text-[1.125rem] font-medium text-on-background mb-4">40% Better Air Delivery</h3>
+<p class="font-body text-[0.875rem] text-on-surface-variant font-light">
+                        Our aerodynamic louvers and optimized fan blade pitch ensure that cooled air is distributed evenly across wider angles, eliminating warm pockets entirely.
+                    </p>
+</div>
+<!-- Glass Card 2 -->
+<div class="bg-surface-container-lowest/70 backdrop-blur-2xl rounded-[1.5rem] p-10 ring-1 ring-outline-variant/15 shadow-ambient">
+<span class="material-symbols-outlined text-3xl text-primary mb-6" style="font-variation-settings: 'FILL' 0;">eco</span>
+<h3 class="font-headline text-[1.125rem] font-medium text-on-background mb-4">Energy Efficient Motor</h3>
+<p class="font-body text-[0.875rem] text-on-surface-variant font-light">
+                        Powered by a brushless DC motor that consumes significantly less power while maintaining peak rotational speeds, reducing your carbon footprint.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. TESTIMONIALS -->
+<section class="w-full bg-surface py-32 px-6 md:px-12 overflow-hidden">
+<div class="max-w-[1920px] mx-auto">
+<h2 class="font-headline text-[2.0rem] font-semibold text-on-background text-center mb-20">Customer Stories.</h2>
+<div class="flex flex-col md:flex-row gap-8 max-w-7xl mx-auto items-stretch">
+<!-- Card 1 -->
+<div class="flex-1 bg-surface-container p-10 rounded-2xl flex flex-col justify-between">
+<div>
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-[1.125rem] text-on-background font-light leading-relaxed mb-8">
+                            "It doesn't just cool the room; it changes the entire atmosphere. The silent mode is truly silent, unlike any other cooler I've owned."
+                        </p>
+</div>
+<div>
+<span class="font-medium text-[0.875rem] block text-on-background">Elena R.</span>
+<span class="text-[0.6875rem] font-light text-on-surface-variant">Aero Pure X1 Owner</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex-1 bg-surface-container p-10 rounded-2xl flex flex-col justify-between">
+<div>
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body text-[1.125rem] text-on-background font-light leading-relaxed mb-8">
+                            "Visually stunning. It blends right into my studio apartment while keeping it freezing during peak summer. The design is impeccable."
+                        </p>
+</div>
+<div>
+<span class="font-medium text-[0.875rem] block text-on-background">Marcus T.</span>
+<span class="text-[0.6875rem] font-light text-on-surface-variant">Aero Compact Owner</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. STORE -->
+<section class="w-full bg-surface-container-low py-32 px-6 md:px-12">
+<div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+<h2 class="font-headline text-[2.0rem] font-semibold text-on-background mb-12">Available Near You.</h2>
+<div class="flex flex-wrap justify-center gap-x-12 gap-y-6">
+<span class="font-headline text-xl text-on-surface-variant hover:text-on-background transition-colors cursor-pointer">New York</span>
+<span class="font-headline text-xl text-on-surface-variant hover:text-on-background transition-colors cursor-pointer">Los Angeles</span>
+<span class="font-headline text-xl text-on-surface-variant hover:text-on-background transition-colors cursor-pointer">Chicago</span>
+<span class="font-headline text-xl text-on-surface-variant hover:text-on-background transition-colors cursor-pointer">Miami</span>
+<span class="font-headline text-xl text-on-surface-variant hover:text-on-background transition-colors cursor-pointer">Austin</span>
+<span class="font-headline text-xl text-on-surface-variant hover:text-on-background transition-colors cursor-pointer">Seattle</span>
+</div>
+<button class="mt-16 bg-surface-container-highest text-on-surface font-medium py-3 px-8 rounded-xl hover:bg-surface-dim transition-colors">
+                Find a Retailer
+            </button>
+</div>
+</section>
+<!-- Footer Component (From JSON) -->
+<footer class="relative overflow-hidden w-full pt-32 pb-12 bg-zinc-950 font-['Inter'] font-light text-zinc-500">
+<!-- Giant Brand Logo Background -->
+<div class="text-[12rem] font-black text-zinc-900/30 absolute -bottom-10 left-0 leading-none select-none pointer-events-none">
+            Siddham
+        </div>
+<div class="relative z-10 flex flex-col md:flex-row justify-between items-end w-full px-12 max-w-[1920px] mx-auto gap-12">
+<!-- Left Side / Copyright -->
+<div class="w-full md:w-auto">
+<p class="text-zinc-500 mb-4">© 2024 Siddham Coolers. Precision in every breath.</p>
+</div>
+<!-- Right Side / Links -->
+<div class="w-full md:w-auto flex flex-wrap gap-8 md:gap-12 items-end">
+<a class="text-zinc-500 hover:text-zinc-300 transition-colors hover:translate-x-1 duration-300 inline-block" href="#">Sustainability</a>
+<a class="text-zinc-500 hover:text-zinc-300 transition-colors hover:translate-x-1 duration-300 inline-block" href="#">Technical Specs</a>
+<a class="text-zinc-500 hover:text-zinc-300 transition-colors hover:translate-x-1 duration-300 inline-block" href="#">Global Shipping</a>
+<a class="text-zinc-500 hover:text-zinc-300 transition-colors hover:translate-x-1 duration-300 inline-block" href="#">Press Kit</a>
+</div>
+</div>
+</footer>
+</body></html>

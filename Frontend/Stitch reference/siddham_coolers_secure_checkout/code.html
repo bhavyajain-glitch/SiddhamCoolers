@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Siddham - Cart &amp; Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#dadada",
+                    "primary-container": "#1470e8",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#656464",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#e5e2e1",
+                    "outline": "#727785",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "secondary": "#5f5e5e",
+                    "primary": "#0058bd",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#adc6ff",
+                    "surface": "#f9f9f9",
+                    "inverse-surface": "#2f3131",
+                    "background": "#f9f9f9",
+                    "surface-variant": "#e2e2e2",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#737575",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "surface-tint": "#005ac2",
+                    "surface-bright": "#f9f9f9",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#fefcff",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f3f3f3",
+                    "secondary-container": "#e5e2e1",
+                    "tertiary-fixed": "#e2e2e2",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-surface": "#1a1c1c",
+                    "surface-container": "#eeeeee",
+                    "tertiary": "#5a5c5c",
+                    "outline-variant": "#c2c6d6",
+                    "surface-container-high": "#e8e8e8",
+                    "primary-fixed": "#d8e2ff",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-primary-fixed-variant": "#004494",
+                    "inverse-primary": "#adc6ff",
+                    "on-secondary-fixed-variant": "#474646",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-background": "#1a1c1c",
+                    "on-tertiary-container": "#fcfcfc",
+                    "on-surface-variant": "#414754",
+                    "on-primary-fixed": "#001a41",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "inverse-on-surface": "#f1f1f1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Inter"
+                    ],
+                    "body": [
+                            "Inter"
+                    ],
+                    "label": [
+                            "Inter"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+        }
+        .glass-nav {
+            background-color: rgba(249, 249, 249, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .btn-gradient {
+            background: linear-gradient(180deg, #0058bd 0%, #1470e8 100%);
+        }
+        .ambient-shadow {
+            box-shadow: 0 20px 40px -10px rgba(26, 28, 28, 0.05);
+        }
+        .input-ghost-border:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(194, 198, 214, 0.2);
+            background-color: #ffffff;
+        }
+        /* Custom Scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f9f9f9; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e2e2e2; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c2c6d6; 
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar (Suppressed for Checkout Flow as per Contextual Rules, replacing with minimal branded header for transactional focus) -->
+<header class="w-full px-8 py-6 max-w-[1920px] mx-auto flex justify-center items-center z-50">
+<a class="text-2xl font-bold tracking-tighter text-on-background hover:opacity-80 transition-opacity duration-300" href="#">Siddham</a>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-6 md:px-12 pt-8 pb-32">
+<div class="mb-16">
+<h1 class="text-[2rem] font-semibold text-on-background tracking-tight mb-2">Secure Checkout</h1>
+<p class="text-[0.875rem] font-light text-on-surface-variant">Review your items and complete your order.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 relative">
+<!-- Left Column: Cart & Details (Takes up 7 cols) -->
+<div class="col-span-1 lg:col-span-7 space-y-16">
+<!-- Section: Cart Items -->
+<section>
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-[1.125rem] font-medium text-on-background">Your Items</h2>
+<span class="text-[0.875rem] text-on-surface-variant bg-surface-container-low px-3 py-1 rounded-full">2 items</span>
+</div>
+<div class="space-y-6">
+<!-- Cart Item 1 -->
+<div class="flex items-start gap-6 group">
+<div class="w-32 h-32 rounded-xl overflow-hidden bg-surface-container-low flex-shrink-0">
+<img alt="Aero V2 Cooler" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Sleek modern white air cooler unit with minimalistic design on subtle grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_bIftr2KvqCho81hCv-t3q3_33jjQ6LUOH5QJ_gdlcQB4Iym9WtPyez0SoPHkH5nJ0ystZvE4C3h2yso3sey0nE-RgSXBvQonyvKlQIzM4rGfm6PrXeszBaNmjlOUktA9XgeDftyf5aB-BsQsD-ggktDQNzp3MIPA9hd0jEz4_dlRRNgIBavgNPrc9nLaZwS7lOULhtjoUAHgE3b4YD5ZnOtb40y9ZoTzmQ1xrnQleXk_2BLR_E51O3Bg_1k4XYovyu7Cy0s5hsE"/>
+</div>
+<div class="flex-grow pt-1">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-[1.125rem] font-medium text-on-background">Aero V2 Smart Cooler</h3>
+<p class="text-[0.875rem] font-light text-on-surface-variant mt-1">Glacier White • Floor Unit</p>
+</div>
+<span class="text-[1.125rem] font-medium text-on-background">₹24,500</span>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="flex items-center bg-surface-container rounded-lg p-1">
+<button aria-label="Decrease quantity" class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[1.25rem]">remove</span>
+</button>
+<span class="w-8 text-center text-[0.875rem] font-medium">1</span>
+<button aria-label="Increase quantity" class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[1.25rem]">add</span>
+</button>
+</div>
+<button class="text-[0.875rem] font-light text-error hover:opacity-80 transition-opacity">Remove</button>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="flex items-start gap-6 group pt-6">
+<div class="w-32 h-32 rounded-xl overflow-hidden bg-surface-container-low flex-shrink-0">
+<img alt="High-Efficiency Filter" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Close up of premium high-efficiency cooling filter mesh texture in metallic grey" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5vG8tHehEuTg7T2j4VIMfJutYz5fZQ4Kqjok6ipri3fu_B_L66LpbO4twcNIJUYzfLkf9No4ZXgO-I1NRqLlQXTw_SesnwV8ZcurMoYMXwCIyKOgPAIvH8eopVgVb0j5k_vL5f54ZEFUVQqFYo5VUeh8GFuG7g-MHs6rW91zwGyOD978m3ww09y-kR_xDpXsM_cRogaRKuf1vON2CHV1ddNhjJq1C2KHHDD_cPgQGmjCXgWkYuDeevNIXw23v1NSpFaM8cGRrerE"/>
+</div>
+<div class="flex-grow pt-1">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-[1.125rem] font-medium text-on-background">HEPA Cooling Filter</h3>
+<p class="text-[0.875rem] font-light text-on-surface-variant mt-1">Pack of 2 • Standard</p>
+</div>
+<span class="text-[1.125rem] font-medium text-on-background">₹1,200</span>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="flex items-center bg-surface-container rounded-lg p-1">
+<button aria-label="Decrease quantity" class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[1.25rem]">remove</span>
+</button>
+<span class="w-8 text-center text-[0.875rem] font-medium">1</span>
+<button aria-label="Increase quantity" class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[1.25rem]">add</span>
+</button>
+</div>
+<button class="text-[0.875rem] font-light text-error hover:opacity-80 transition-opacity">Remove</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Shipping Address -->
+<section>
+<h2 class="text-[1.125rem] font-medium text-on-background mb-8">Shipping Information</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Saved Address Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl ambient-shadow relative overflow-hidden cursor-pointer border-2 border-transparent hover:border-surface-variant transition-colors group">
+<div class="absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[1.25rem]">home</span>
+<span class="text-[0.6875rem] font-bold uppercase tracking-wider text-primary">Home</span>
+</div>
+<p class="text-[0.875rem] font-medium text-on-background mb-1">Rajesh Kumar</p>
+<p class="text-[0.875rem] font-light text-on-surface-variant leading-relaxed">
+                                402, Skyline Apartments,<br/>
+                                MG Road, Indiranagar,<br/>
+                                Bangalore, Karnataka 560038
+                            </p>
+<p class="text-[0.875rem] font-light text-on-surface-variant mt-3">+91 98765 43210</p>
+</div>
+<!-- Add New Address Card -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors min-h-[200px]">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center mb-3 text-on-surface-variant">
+<span class="material-symbols-outlined">add</span>
+</div>
+<span class="text-[0.875rem] font-medium text-on-background">Add New Address</span>
+</div>
+</div>
+</section>
+<!-- Section: Payment Method -->
+<section>
+<h2 class="text-[1.125rem] font-medium text-on-background mb-8">Payment Method</h2>
+<div class="space-y-4">
+<!-- UPI Option -->
+<label class="flex items-center p-5 rounded-xl bg-surface-container-lowest ambient-shadow cursor-pointer transition-colors hover:bg-surface">
+<input class="form-radio h-5 w-5 text-primary border-outline-variant bg-surface-container focus:ring-primary focus:ring-offset-0 focus:ring-offset-transparent" name="payment_method" type="radio" value="upi"/>
+<div class="ml-4 flex-grow flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+</div>
+<div>
+<span class="block text-[0.875rem] font-medium text-on-background">UPI</span>
+<span class="block text-[0.75rem] text-on-surface-variant">Google Pay, PhonePe, Paytm</span>
+</div>
+</div>
+</div>
+</label>
+<!-- Card Option -->
+<label class="flex items-center p-5 rounded-xl bg-surface-container-low cursor-pointer transition-colors hover:bg-surface">
+<input checked="" class="form-radio h-5 w-5 text-primary border-outline-variant bg-surface-container focus:ring-primary focus:ring-offset-0 focus:ring-offset-transparent" name="payment_method" type="radio" value="card"/>
+<div class="ml-4 flex-grow flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">credit_card</span>
+</div>
+<div>
+<span class="block text-[0.875rem] font-medium text-on-background">Credit / Debit Card</span>
+<span class="block text-[0.75rem] text-on-surface-variant">Visa, Mastercard, RuPay</span>
+</div>
+</div>
+</div>
+</label>
+<!-- Card Details (Expanded State - Minimalist) -->
+<div class="ml-[3.75rem] mr-4 mt-2 p-5 bg-surface-container-lowest rounded-xl ambient-shadow space-y-4">
+<div class="relative">
+<input class="w-full bg-surface-container text-on-background rounded-lg border-transparent px-4 py-3 text-[0.875rem] font-light placeholder-on-surface-variant/50 input-ghost-border transition-all" id="card_number" placeholder="Card Number" type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline">credit_card</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<input class="w-full bg-surface-container text-on-background rounded-lg border-transparent px-4 py-3 text-[0.875rem] font-light placeholder-on-surface-variant/50 input-ghost-border transition-all" id="expiry" placeholder="MM/YY" type="text"/>
+<input class="w-full bg-surface-container text-on-background rounded-lg border-transparent px-4 py-3 text-[0.875rem] font-light placeholder-on-surface-variant/50 input-ghost-border transition-all" id="cvv" placeholder="CVV" type="password"/>
+</div>
+<input class="w-full bg-surface-container text-on-background rounded-lg border-transparent px-4 py-3 text-[0.875rem] font-light placeholder-on-surface-variant/50 input-ghost-border transition-all" id="name_on_card" placeholder="Name on Card" type="text"/>
+</div>
+<!-- COD Option -->
+<label class="flex items-center p-5 rounded-xl bg-surface-container-low cursor-pointer transition-colors hover:bg-surface">
+<input class="form-radio h-5 w-5 text-primary border-outline-variant bg-surface-container focus:ring-primary focus:ring-offset-0 focus:ring-offset-transparent" name="payment_method" type="radio" value="cod"/>
+<div class="ml-4 flex-grow flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<span class="block text-[0.875rem] font-medium text-on-background">Cash on Delivery</span>
+<span class="block text-[0.75rem] text-on-surface-variant">Pay when you receive</span>
+</div>
+</div>
+</div>
+</label>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary (Sticky, 5 cols) -->
+<div class="col-span-1 lg:col-span-5 relative">
+<div class="sticky top-12 bg-surface-container-lowest rounded-xl p-8 ambient-shadow flex flex-col h-auto">
+<h2 class="text-[1.125rem] font-medium text-on-background mb-6">Order Summary</h2>
+<!-- Coupon Input -->
+<div class="mb-8">
+<label class="block text-[0.6875rem] font-bold uppercase tracking-wider text-on-surface-variant mb-3" for="coupon">Promotional Code</label>
+<div class="flex gap-2">
+<input class="flex-grow bg-surface-container text-on-background rounded-lg border-transparent px-4 py-3 text-[0.875rem] font-medium uppercase tracking-wide placeholder-on-surface-variant/50 input-ghost-border transition-all" id="coupon" placeholder="Enter Code" type="text" value="SIDDHAM500"/>
+<button class="px-6 py-3 bg-surface-container-highest text-on-surface rounded-lg text-[0.875rem] font-medium hover:bg-surface-variant transition-colors">Apply</button>
+</div>
+<!-- Applied Coupon State -->
+<div class="mt-4 p-4 rounded-xl bg-primary-fixed/30 border border-primary-fixed flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">local_offer</span>
+<div>
+<p class="text-[0.875rem] font-medium text-on-primary-fixed-variant">'SIDDHAM500' applied successfully</p>
+<p class="text-[0.75rem] font-medium text-primary mt-1">You saved ₹500 on this order.</p>
+</div>
+<button aria-label="Remove coupon" class="ml-auto text-on-surface-variant hover:text-on-background transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">close</span>
+</button>
+</div>
+</div>
+<!-- Line Items -->
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center text-[0.875rem] text-on-surface-variant font-light">
+<span>Subtotal (2 items)</span>
+<span>₹25,700</span>
+</div>
+<div class="flex justify-between items-center text-[0.875rem] text-on-surface-variant font-light">
+<span>Standard Shipping</span>
+<span>Free</span>
+</div>
+<div class="flex justify-between items-center text-[0.875rem] text-primary font-medium">
+<span>Discount (SIDDHAM500)</span>
+<span>-₹500</span>
+</div>
+</div>
+<!-- Total -->
+<div class="pt-6 pb-8 border-t border-surface-container-high flex justify-between items-end">
+<div>
+<span class="block text-[0.875rem] text-on-surface-variant font-light">Total Amount</span>
+<span class="block text-[0.6875rem] text-on-surface-variant font-light mt-1">Including GST</span>
+</div>
+<span class="text-[2rem] font-semibold text-on-background leading-none tracking-tight">₹25,200</span>
+</div>
+<!-- CTA -->
+<button class="w-full btn-gradient text-on-primary py-4 rounded-xl text-[1rem] font-medium shadow-[0_8px_20px_rgba(0,88,189,0.2)] hover:shadow-[0_12px_24px_rgba(0,88,189,0.3)] hover:-translate-y-0.5 transition-all duration-300 ease-out flex items-center justify-center gap-2">
+                        Complete Purchase
+                        <span class="material-symbols-outlined text-[1.25rem]">lock</span>
+</button>
+<p class="text-center text-[0.75rem] text-on-surface-variant font-light mt-4 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[1rem] opacity-70">verified_user</span>
+                        Payments are secure and encrypted
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Minimal for Checkout) -->
+<footer class="w-full bg-zinc-950 dark:bg-black pt-16 pb-8 relative overflow-hidden mt-auto">
+<div class="flex flex-col items-center justify-center w-full px-12 max-w-[1920px] mx-auto z-10 relative">
+<p class="font-['Inter'] font-light text-zinc-500 text-sm mb-4 text-center">
+                Need help? Contact support at 1800-SIDDHAM
+            </p>
+<p class="font-['Inter'] font-light text-zinc-500 text-sm">
+                © 2024 Siddham Coolers. Precision in every breath.
+            </p>
+</div>
+<!-- Brand Watermark -->
+<div class="text-[8rem] md:text-[12rem] font-black text-zinc-900/30 absolute -bottom-8 md:-bottom-12 left-1/2 -translate-x-1/2 leading-none select-none pointer-events-none whitespace-nowrap">
+            Siddham
+        </div>
+</footer>
+</body></html>

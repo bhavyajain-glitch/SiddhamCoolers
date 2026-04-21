@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Siddham Coolers Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#dadada",
+                    "primary-container": "#1470e8",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#656464",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#e5e2e1",
+                    "outline": "#727785",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "secondary": "#5f5e5e",
+                    "primary": "#0058bd",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#adc6ff",
+                    "surface": "#f9f9f9",
+                    "inverse-surface": "#2f3131",
+                    "background": "#f9f9f9",
+                    "surface-variant": "#e2e2e2",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#737575",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "surface-tint": "#005ac2",
+                    "surface-bright": "#f9f9f9",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#fefcff",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f3f3f3",
+                    "secondary-container": "#e5e2e1",
+                    "tertiary-fixed": "#e2e2e2",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-surface": "#1a1c1c",
+                    "surface-container": "#eeeeee",
+                    "tertiary": "#5a5c5c",
+                    "outline-variant": "#c2c6d6",
+                    "surface-container-high": "#e8e8e8",
+                    "primary-fixed": "#d8e2ff",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-primary-fixed-variant": "#004494",
+                    "inverse-primary": "#adc6ff",
+                    "on-secondary-fixed-variant": "#474646",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-background": "#1a1c1c",
+                    "on-tertiary-container": "#fcfcfc",
+                    "on-surface-variant": "#414754",
+                    "on-primary-fixed": "#001a41",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "inverse-on-surface": "#f1f1f1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar (Shared Component) -->
+<!-- Suppressed active state logic as it's an admin panel, mapped "Support" to active loosely or none at all if not fitting. Let's use none active to keep it clean. -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/70 dark:bg-zinc-900/70 backdrop-blur-2xl no-border shadow-none bg-surface-container-low/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-[1920px] mx-auto">
+<!-- Brand -->
+<div class="text-2xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 font-['Inter'] font-light tracking-tight">
+                Siddham
+            </div>
+<!-- Navigation Links -->
+<ul class="hidden md:flex gap-8 items-center">
+<li>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors hover:opacity-80 transition-all duration-500 ease-out font-['Inter'] font-light tracking-tight" href="#">Technology</a>
+</li>
+<li>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors hover:opacity-80 transition-all duration-500 ease-out font-['Inter'] font-light tracking-tight" href="#">Products</a>
+</li>
+<li>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors hover:opacity-80 transition-all duration-500 ease-out font-['Inter'] font-light tracking-tight" href="#">Stories</a>
+</li>
+<li>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors hover:opacity-80 transition-all duration-500 ease-out font-['Inter'] font-light tracking-tight" href="#">Support</a>
+</li>
+</ul>
+<!-- Actions -->
+<div class="flex items-center gap-6">
+<!-- Trailing Primary Action -->
+<button class="bg-gradient-to-b from-primary to-primary-container text-on-primary font-medium px-6 py-2 rounded-xl shadow-[0_4px_20px_rgb(0,88,189,0.2)] hover:opacity-80 transition-all duration-500 ease-out font-['Inter'] tracking-tight">
+                    Shop Now
+                </button>
+<!-- Trailing Icon Actions -->
+<button class="text-blue-600 dark:text-blue-400 hover:opacity-80 transition-all duration-500 ease-out" data-icon="shopping_bag">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Admin Layout -->
+<main class="pt-32 pb-24 px-8 max-w-[1920px] mx-auto min-h-screen">
+<!-- Header -->
+<header class="mb-16 mt-8">
+<h1 class="text-[2.0rem] font-semibold text-on-background leading-tight">Admin Dashboard</h1>
+<p class="text-[0.875rem] font-light text-on-surface-variant mt-2">Overview of product inventory, recent orders, and retailer network.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Analytics & Retailers (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- Analytics Cards -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_8px_30px_rgb(26,28,28,0.04)] flex flex-col gap-2">
+<span class="text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider">Total Revenue</span>
+<div class="text-[2.0rem] font-semibold text-on-background">$142,500</div>
+<div class="text-[0.875rem] font-light text-primary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                            +12.5% this month
+                        </div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_8px_30px_rgb(26,28,28,0.04)] flex flex-col gap-2">
+<span class="text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider">Active Retailers</span>
+<div class="text-[2.0rem] font-semibold text-on-background">84</div>
+<div class="text-[0.875rem] font-light text-on-surface-variant mt-1">
+                            3 pending approval
+                        </div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_8px_30px_rgb(26,28,28,0.04)] flex flex-col gap-2">
+<span class="text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider">Units Sold</span>
+<div class="text-[2.0rem] font-semibold text-on-background">1,204</div>
+<div class="text-[0.875rem] font-light text-primary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                            +8% this month
+                        </div>
+</div>
+</section>
+<!-- Retailer Approval -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_8px_30px_rgb(26,28,28,0.04)]">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-[1.125rem] font-medium text-on-background">Pending Retailer Approvals</h2>
+<button class="text-[0.875rem] font-medium text-primary hover:opacity-80 transition-opacity">View All</button>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Retailer Item -->
+<div class="flex items-center justify-between p-4 bg-surface rounded-xl">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">storefront</span>
+</div>
+<div>
+<div class="text-[1.125rem] font-medium text-on-background">FrostTech Electronics</div>
+<div class="text-[0.875rem] font-light text-on-surface-variant">Seattle, WA • Applied 2 days ago</div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface-container-highest text-on-surface px-4 py-2 rounded-xl text-[0.875rem] font-medium hover:bg-surface-variant transition-colors">Reject</button>
+<button class="bg-gradient-to-b from-primary to-primary-container text-on-primary px-4 py-2 rounded-xl text-[0.875rem] font-medium shadow-[0_4px_20px_rgb(0,88,189,0.2)] hover:opacity-90 transition-opacity">Approve</button>
+</div>
+</div>
+<!-- Retailer Item -->
+<div class="flex items-center justify-between p-4 bg-surface rounded-xl">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">storefront</span>
+</div>
+<div>
+<div class="text-[1.125rem] font-medium text-on-background">Cool Climate Home</div>
+<div class="text-[0.875rem] font-light text-on-surface-variant">Austin, TX • Applied 4 days ago</div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface-container-highest text-on-surface px-4 py-2 rounded-xl text-[0.875rem] font-medium hover:bg-surface-variant transition-colors">Reject</button>
+<button class="bg-gradient-to-b from-primary to-primary-container text-on-primary px-4 py-2 rounded-xl text-[0.875rem] font-medium shadow-[0_4px_20px_rgb(0,88,189,0.2)] hover:opacity-90 transition-opacity">Approve</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Order Management -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_8px_30px_rgb(26,28,28,0.04)]">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-[1.125rem] font-medium text-on-background">Recent Orders</h2>
+<div class="flex gap-2">
+<button class="bg-primary-fixed text-on-primary-fixed px-4 py-1.5 rounded-full text-[0.875rem] font-medium">All</button>
+<button class="bg-surface text-on-surface-variant px-4 py-1.5 rounded-full text-[0.875rem] font-medium hover:bg-surface-container-low transition-colors">Pending</button>
+<button class="bg-surface text-on-surface-variant px-4 py-1.5 rounded-full text-[0.875rem] font-medium hover:bg-surface-container-low transition-colors">Shipped</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider">
+<th class="pb-4 font-bold">Order ID</th>
+<th class="pb-4 font-bold">Customer</th>
+<th class="pb-4 font-bold">Product</th>
+<th class="pb-4 font-bold">Status</th>
+<th class="pb-4 font-bold text-right">Amount</th>
+</tr>
+</thead>
+<tbody class="text-[0.875rem] font-light text-on-surface-variant">
+<tr>
+<td class="py-4 font-medium text-on-background">#ORD-0921</td>
+<td class="py-4">Sarah Jenkins</td>
+<td class="py-4">Arctic Tower Pro</td>
+<td class="py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-fixed text-on-primary-fixed">
+                                            Processing
+                                        </span>
+</td>
+<td class="py-4 text-right font-medium text-on-background">$899.00</td>
+</tr>
+<tr>
+<td class="py-4 font-medium text-on-background">#ORD-0920</td>
+<td class="py-4">Michael Chang</td>
+<td class="py-4">Breeze Lite</td>
+<td class="py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-surface-container-highest text-on-surface">
+                                            Shipped
+                                        </span>
+</td>
+<td class="py-4 text-right font-medium text-on-background">$349.00</td>
+</tr>
+<tr>
+<td class="py-4 font-medium text-on-background">#ORD-0919</td>
+<td class="py-4">Retailer: FrostTech</td>
+<td class="py-4">10x Arctic Tower Pro</td>
+<td class="py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-surface-container-highest text-on-surface">
+                                            Delivered
+                                        </span>
+</td>
+<td class="py-4 text-right font-medium text-on-background">$7,500.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- Right Column: Product Management (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-8">
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_8px_30px_rgb(26,28,28,0.04)] h-full flex flex-col">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-[1.125rem] font-medium text-on-background">Products</h2>
+<button class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex flex-col gap-6 flex-grow">
+<!-- Product Item -->
+<div class="flex gap-4 group">
+<div class="w-20 h-20 bg-surface-container-low rounded-xl flex-shrink-0 overflow-hidden relative">
+<img alt="Sleek modern cooling tower fan on white background" class="w-full h-full object-cover" data-alt="sleek modern industrial cooling fan against minimalist background with cool blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhho6m3q9DEVLHh9rugi4n6ik9uB6_883he4n_4d6hsxoxxX4iv0LpZ15loxR5f_Tq24fP8Fb_gBXAXftr8YdIuXneh17UypGTtwtvOpxk99scFEJbSYdgYfveXDPYzQfl_CvBmpPudfHQNutNmXWnqa1MzMOtW4mZjxLEegkCSclC5GEytRkhGmZQW7_zTSjy0XN4RVFUhzhnxKfTl4vfpom3JohtOFx-ot31Om7k9tbQbkLPDOdjD3voUTanE4ALqLrkVQWsWGw"/>
+</div>
+<div class="flex flex-col justify-center w-full">
+<div class="flex justify-between items-start">
+<div class="text-[1.125rem] font-medium text-on-background leading-tight">Arctic Tower Pro</div>
+<div class="text-[0.875rem] font-medium text-on-background">$899</div>
+</div>
+<div class="text-[0.875rem] font-light text-on-surface-variant mt-1">Stock: 124 units</div>
+<div class="flex gap-3 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-[0.75rem] font-medium text-primary hover:underline">Edit</button>
+<button class="text-[0.75rem] font-medium text-error hover:underline">Delete</button>
+</div>
+</div>
+</div>
+<!-- Product Item -->
+<div class="flex gap-4 group">
+<div class="w-20 h-20 bg-surface-container-low rounded-xl flex-shrink-0 overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-variant to-surface-container-low flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">ac_unit</span>
+</div>
+</div>
+<div class="flex flex-col justify-center w-full">
+<div class="flex justify-between items-start">
+<div class="text-[1.125rem] font-medium text-on-background leading-tight">Breeze Lite</div>
+<div class="text-[0.875rem] font-medium text-on-background">$349</div>
+</div>
+<div class="text-[0.875rem] font-light text-on-surface-variant mt-1">Stock: 45 units</div>
+<div class="flex gap-3 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-[0.75rem] font-medium text-primary hover:underline">Edit</button>
+<button class="text-[0.75rem] font-medium text-error hover:underline">Delete</button>
+</div>
+</div>
+</div>
+<!-- Product Item -->
+<div class="flex gap-4 group">
+<div class="w-20 h-20 bg-surface-container-low rounded-xl flex-shrink-0 overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-variant to-surface-container-low flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">heat_pump</span>
+</div>
+</div>
+<div class="flex flex-col justify-center w-full">
+<div class="flex justify-between items-start">
+<div class="text-[1.125rem] font-medium text-on-background leading-tight">Industrial XL</div>
+<div class="text-[0.875rem] font-medium text-on-background">$1,299</div>
+</div>
+<div class="text-[0.875rem] font-light text-on-surface-variant mt-1">Stock: 8 units</div>
+<div class="flex gap-3 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-[0.75rem] font-medium text-primary hover:underline">Edit</button>
+<button class="text-[0.75rem] font-medium text-error hover:underline">Delete</button>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-8 w-full bg-surface-container-highest text-on-surface py-3 rounded-xl text-[0.875rem] font-medium hover:bg-surface-variant transition-colors flex items-center justify-center gap-2">
+                        View Complete Inventory
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="relative overflow-hidden w-full pt-32 pb-12 bg-zinc-950 dark:bg-black tonal-shift-high flat no shadows">
+<div class="flex flex-col md:flex-row justify-between items-end w-full px-12 max-w-[1920px] mx-auto z-10 relative">
+<div class="flex flex-col gap-6 md:w-1/2">
+<ul class="flex flex-wrap gap-8">
+<li><a class="text-zinc-500 hover:text-zinc-300 transition-colors font-['Inter'] font-light" href="#">Sustainability</a></li>
+<li><a class="text-zinc-500 hover:text-zinc-300 transition-colors font-['Inter'] font-light" href="#">Technical Specs</a></li>
+<li><a class="text-zinc-500 hover:text-zinc-300 transition-colors font-['Inter'] font-light" href="#">Global Shipping</a></li>
+<li><a class="text-zinc-500 hover:text-zinc-300 transition-colors font-['Inter'] font-light" href="#">Press Kit</a></li>
+</ul>
+<div class="text-zinc-500 font-['Inter'] font-light">
+                    © 2024 Siddham Coolers. Precision in every breath.
+                </div>
+</div>
+<div class="mt-12 md:mt-0">
+<span class="text-blue-500 font-['Inter'] font-light">Admin Portal</span>
+</div>
+</div>
+<!-- Brand Logo Background -->
+<div class="text-[12rem] font-black text-zinc-900/30 absolute -bottom-10 left-0 leading-none select-none pointer-events-none">
+            Siddham
+        </div>
+</footer>
+</body></html>
